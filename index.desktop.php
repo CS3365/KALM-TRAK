@@ -1,5 +1,5 @@
 <?php
 
-echo "You are desktop";
+echo "You are desktop!";
 
 ?>
