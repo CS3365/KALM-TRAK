@@ -1,2 +1,6 @@
 stylesheets/
 .sass-cache/
+examples/
+resources/
+microloader/
+*.swp

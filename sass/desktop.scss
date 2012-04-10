@@ -1,0 +1,29 @@
+@import "compass/css3/images";
+@import "compass/css3/text-shadow";
+
+#title {
+  text-align: center;
+
+  .kalm {
+    font: bold 330%/100% "Lucidia Grande";
+    position: relative;
+    color: #CCC;
+    -webkit-text-stroke: 1px blue;
+    @include text-shadow(#AAA, 1px, 1px, 3px);
+
+    span {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      @include background(
+        linear-gradient(rgba(255,255,255,.2),
+        rgba(255,255,255,.8)));
+    }
+  }
+
+  .trak {
+    font-size: 55px;
+    font-family: Days;
+  }
+}

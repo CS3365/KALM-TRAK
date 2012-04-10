@@ -1,5 +1,5 @@
 <?php
 
-echo "You are desktop";
+include("index.desktop.html");
 
 ?>
