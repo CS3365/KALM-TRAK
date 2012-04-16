@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 stylesheets/
 .sass-cache/
 examples/
 resources/
 microloader/
+=======
+>>>>>>> 47fb0d8cab27cc65de46117f3f7e0cbf71ff35c4
 *.swp
