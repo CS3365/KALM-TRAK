@@ -18,7 +18,7 @@ Ext.define("KALMTRAK.view.Main", {
                     xtype: 'titlebar',
                     title: 'Welcome to KALMTRAK'
                 },
-                
+                {
                 var formPanel = Ext.create('Ext.form.Panel', {
 					fullscreen: true,
 
@@ -37,6 +37,7 @@ Ext.define("KALMTRAK.view.Main", {
                 
 					}],
 				});
+				}
             },
             {
                 title: 'Get Started',
