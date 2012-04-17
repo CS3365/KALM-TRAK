@@ -1,6 +1,6 @@
 Ext.define("KALMTRAK.view.Main", {
     extend: 'Ext.tab.Panel',
-    requires: ['Ext.TitleBar'],
+    requires: ['Ext.TitleBar','Ext.form.Panel'],
     
     config: {
         tabBarPosition: 'bottom',
