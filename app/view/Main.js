@@ -1,13 +1,13 @@
 Ext.define("KALMTRAK.view.Main", {
     extend: 'Ext.tab.Panel',
-    requires: ['Ext.TitleBar'],
+    requires: ['Ext.TitleBar','Ext.ActionSheet','Ext.form.Panel'],
     
     config: {
         tabBarPosition: 'bottom',
         
         items: [
             {
-                title: 'Welcome',
+                title: 'KALMTRAK',
                 iconCls: 'home',
                 
                 styleHtmlContent: true,
@@ -15,16 +15,22 @@ Ext.define("KALMTRAK.view.Main", {
 
                 items: {
                     docked: 'top',
-                    xtype: 'titlebar',
-                    title: 'Welcome to Sencha Touch 2'
+					xtype: 'fieldset',
+					title: 'KALMTRAK Login Info',
                 },
+                {
+					xtype: 'textfield',
+                    name : 'username',
+                    label: 'Username:'
+                },
+                {
+                    xtype: 'passwordfield',
+                    name : 'password',
+                    label: 'Password:'
+				}
                 
-                html: [
-                    "test2 -You've just generated a new Sencha Touch 2 project. What you're looking at right now is the ",
-                    "contents of <a target='_blank' href=\"app/view/Main.js\">app/view/Main.js</a> - edit that file ",
-                    "and refresh to change what's rendered here."
-                ].join("")
             },
+			
             {
                 title: 'Get Started',
                 iconCls: 'action',
@@ -45,3 +51,35 @@ Ext.define("KALMTRAK.view.Main", {
         ]
     }
 });
+formPanel.add({
+    xtype: 'toolbar',
+    //docked: 'bottom',
+    layout: { pack: 'center' },
+    items: [
+        {
+            xtype: 'button',
+            text: 'Remember Me?',
+            handler: function() {
+                formPanel.setValues({
+                    username: 'mKent',
+                    password: 'secret'
+                })
+            }
+        },
+        {
+            xtype: 'button',
+            text: 'Login',
+            handler: function() {
+                Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
+            }
+        },
+        {
+            xtype: 'button',
+            text: 'Reset',
+            handler: function() {
+                formPanel.reset();
+            }
+        }
+    ]
+});
+
