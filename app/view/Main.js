@@ -1,5 +1,94 @@
 Ext.define("KALMTRAK.view.Main", {
     extend: 'Ext.tab.Panel',
+    requires: ['Ext.TitleBar'],
+    
+    config: {
+        tabBarPosition: 'bottom',
+        
+        items: [
+            {
+                title: 'Welcome to KALMTRAK',
+                iconCls: 'home',
+                var formPanel = Ext.create('Ext.form.Panel', {
+					fullscreen: true,
+
+					items: [{
+						xtype: 'fieldset',
+						items: [
+							{
+								xtype: 'textfield',
+								name : 'name',
+								label: 'Name'
+							},
+							{
+								xtype: 'emailfield',
+								name : 'email',
+								label: 'Email'
+							},
+							{
+								xtype: 'passwordfield',
+								name : 'password',
+								label: 'Password'
+							}
+						]
+					}]
+				});
+
+				formPanel.add({
+					xtype: 'toolbar',
+					//docked: 'bottom',
+					layout: { pack: 'center' },
+					items: [
+						{
+							xtype: 'button',
+							text: 'Set Data',
+							handler: function() {
+								formPanel.setValues({
+									name: 'Ed',
+									email: 'ed@sencha.com',
+									password: 'secret'
+								})
+							}
+						},
+						{
+							xtype: 'button',
+							text: 'Get Data',
+							handler: function() {
+								Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
+							}
+						},
+						{
+							xtype: 'button',
+							text: 'Clear Data',
+							handler: function() {
+								formPanel.reset();
+							}
+						}
+					]
+				});
+            },
+            {
+                title: 'Get Started',
+                iconCls: 'action',
+                
+                items: [
+                    {
+                        docked: 'top',
+                        xtype: 'titlebar',
+                        title: 'Getting Started'
+                    },
+                    {
+                        xtype: 'video',
+                        url: 'http://av.vimeo.com/64284/137/87347327.mp4?token=1330978144_f9b698fea38cd408d52a2393240c896c',
+                        posterUrl: 'http://b.vimeocdn.com/ts/261/062/261062119_640.jpg'
+                    }
+                ]
+            }
+        ]
+    }
+});
+/*Ext.define("KALMTRAK.view.Main", {
+    extend: 'Ext.tab.Panel',
     requires: ['Ext.TitleBar','Ext.ActionSheet','Ext.form.Panel'],
     
     config: {
@@ -81,4 +170,4 @@ Ext.define("KALMTRAK.view.Main", {
             }
         ]
     }
-});
+});*/
