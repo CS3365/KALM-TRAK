@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-Ext.application(
-    {
-      name: "KALMTRAK",
-      views: [
-      ],
-      stores: [
-      ],
-      profiles: [
-        'Tablet'
-      ]
-    }
-);
-=======
 //<debug>
 Ext.Loader.setPath({
     'Ext': 'sdk/src'
@@ -55,4 +41,3 @@ Ext.application({
         );
     }
 });
->>>>>>> 47fb0d8cab27cc65de46117f3f7e0cbf71ff35c4
