@@ -36,7 +36,7 @@ Ext.define("KALMTRAK.view.Main", {
 						}]
                 
 					}],
-				});
+				})
 				}
             },
             {
