@@ -1,4 +1,4 @@
-/*
+
 Ext.define("KALMTRAK.view.Main", {
     extend: 'Ext.tab.Panel',
     requires: ['Ext.TitleBar'],
@@ -46,8 +46,8 @@ Ext.define("KALMTRAK.view.Main", {
         ]
     }
 });
-*/
 
+/*
 Ext.define("KALMTRAK.view.Main", {
     extend: 'Ext.tab.Panel',
     requires: ['Ext.TitleBar','Ext.ActionSheet','Ext.form.Panel'],
@@ -132,3 +132,4 @@ Ext.define("KALMTRAK.view.Main", {
         ]
     }
 });
+*/
