@@ -1,6 +1,6 @@
 Ext.define("KALMTRAK.view.Main", {
     extend: 'Ext.tab.Panel',
-    requires: ['Ext.TitleBar','Ext.form.Panel'],
+    requires: ['Ext.TitleBar'],
     
     config: {
         tabBarPosition: 'bottom',
@@ -18,20 +18,12 @@ Ext.define("KALMTRAK.view.Main", {
                     xtype: 'titlebar',
                     title: 'Welcome to KALMTRAK'
                 },
-                {
-
-					xtype:'fieldset',
-					items: {
-						xtype: 'textfield',
-						name : 'username',
-						label: 'Username:'
-					},
-					{
-						xtype: 'passwordfield',
-						name : 'password',
-						label: 'Password:'
-					}
-				}
+                
+                html: [
+                    "test2 -You've just generated a new Sencha Touch 2 project. What you're looking at right now is the ",
+                    "contents of <a target='_blank' href=\"app/view/Main.js\">app/view/Main.js</a> - edit that file ",
+                    "and refresh to change what's rendered here."
+                ].join("")
             },
             {
                 title: 'Get Started',
