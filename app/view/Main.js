@@ -49,37 +49,37 @@ Ext.define("KALMTRAK.view.Main", {
                 ]
             }
         ]
-    }
 	formPanel.add({
-    xtype: 'toolbar',
-    //docked: 'bottom',
-    layout: { pack: 'center' },
-    items: [
-        {
-            xtype: 'button',
-            text: 'Remember Me?',
-            handler: function() {
-                formPanel.setValues({
-                    username: 'mKent',
-                    password: 'secret'
-                })
-            }
-        },
-        {
-            xtype: 'button',
-            text: 'Login',
-            handler: function() {
-                Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
-            }
-        },
-        {
-            xtype: 'button',
-            text: 'Reset',
-            handler: function() {
-                formPanel.reset();
-            }
-        }
-    ]
-});
+		xtype: 'toolbar',
+		//docked: 'bottom',
+		layout: { pack: 'center' },
+		items: [
+			{
+				xtype: 'button',
+				text: 'Remember Me?',
+				handler: function() {
+					formPanel.setValues({
+						username: 'mKent',
+						password: 'secret'
+					})
+				}
+			},
+			{
+				xtype: 'button',
+				text: 'Login',
+				handler: function() {
+					Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
+				}
+			},
+			{
+				xtype: 'button',
+				text: 'Reset',
+				handler: function() {
+					formPanel.reset();
+				}
+			}
+		]
+	});
+    }
 
 });
