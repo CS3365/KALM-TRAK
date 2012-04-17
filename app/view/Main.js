@@ -50,8 +50,7 @@ Ext.define("KALMTRAK.view.Main", {
             }
         ]
     }
-});
-formPanel.add({
+	formPanel.add({
     xtype: 'toolbar',
     //docked: 'bottom',
     layout: { pack: 'center' },
@@ -83,3 +82,4 @@ formPanel.add({
     ]
 });
 
+});
