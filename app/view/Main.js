@@ -19,8 +19,6 @@ Ext.define("KALMTRAK.view.Main", {
                     title: 'Welcome to KALMTRAK'
                 },
                 {
-                var formPanel = Ext.create('Ext.form.Panel', {
-
 					items: [{
 						xtype:'fieldset',
 						items: [{
@@ -35,7 +33,6 @@ Ext.define("KALMTRAK.view.Main", {
 						}]
                 
 					}],
-				})
 				}
             },
             {
