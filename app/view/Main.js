@@ -10,27 +10,58 @@ Ext.define("KALMTRAK.view.Main", {
                 title: 'KALMTRAK',
                 iconCls: 'home',
                 
-                styleHtmlContent: true,
-                scrollable: true,
+                //styleHtmlContent: true,
+                //scrollable: true,
+				var formPanel = Ext.create('Ext.form.Panel', {
+					fullscreen: true,
 
-                items: {
-                    docked: 'top',
-					xtype: 'fieldset',
-					title: 'KALMTRAK Login Info',
-                },
-                {
-					xtype: 'textfield',
-                    name : 'username',
-                    label: 'Username:'
-                },
-                {
-                    xtype: 'passwordfield',
-                    name : 'password',
-                    label: 'Password:'
-				}
+					items: [{
+						xtype:'fieldset',
+						items: [{
+							xtype: 'textfield',
+							name : 'username',
+							label: 'Username:'
+						},
+						{
+							xtype: 'passwordfield',
+							name : 'password',
+							label: 'Password:'
+						}]
                 
-            },
-			
+					}],
+				});
+				formPanel.add({
+					xtype: 'toolbar',
+					//docked: 'bottom',
+					layout: { pack: 'center' },
+					items: [
+						{
+							xtype: 'button',
+							text: 'Remember Me?',
+							handler: function() {
+								formPanel.setValues({
+									username: 'mKent',
+									password: 'secret'
+								})
+							}
+						},
+						{
+							xtype: 'button',
+							text: 'Login',
+							handler: function() {
+								Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
+							}
+						},
+						{
+							xtype: 'button',
+							text: 'Reset',
+							handler: function() {
+								formPanel.reset();
+							}
+						}
+					]
+				});
+			}
             {
                 title: 'Get Started',
                 iconCls: 'action',
@@ -49,37 +80,5 @@ Ext.define("KALMTRAK.view.Main", {
                 ]
             }
         ]
-	formPanel.add({
-		xtype: 'toolbar',
-		//docked: 'bottom',
-		layout: { pack: 'center' },
-		items: [
-			{
-				xtype: 'button',
-				text: 'Remember Me?',
-				handler: function() {
-					formPanel.setValues({
-						username: 'mKent',
-						password: 'secret'
-					})
-				}
-			},
-			{
-				xtype: 'button',
-				text: 'Login',
-				handler: function() {
-					Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
-				}
-			},
-			{
-				xtype: 'button',
-				text: 'Reset',
-				handler: function() {
-					formPanel.reset();
-				}
-			}
-		]
-	});
     }
-
 });
