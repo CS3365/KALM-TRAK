@@ -20,7 +20,6 @@ Ext.define("KALMTRAK.view.Main", {
                 },
                 {
                 var formPanel = Ext.create('Ext.form.Panel', {
-					fullscreen: true,
 
 					items: [{
 						xtype:'fieldset',
