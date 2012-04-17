@@ -19,23 +19,18 @@ Ext.define("KALMTRAK.view.Main", {
                     title: 'Welcome to KALMTRAK'
                 },
                 {
-                var formPanel = Ext.create('Ext.form.Panel', {
 
-					items: [{
-						xtype:'fieldset',
-						items: [{
-							xtype: 'textfield',
-							name : 'username',
-							label: 'Username:'
-						},
-						{
-							xtype: 'passwordfield',
-							name : 'password',
-							label: 'Password:'
-						}]
-                
-					}]
-				})
+					xtype:'fieldset',
+					items: {
+						xtype: 'textfield',
+						name : 'username',
+						label: 'Username:'
+					},
+					{
+						xtype: 'passwordfield',
+						name : 'password',
+						label: 'Password:'
+					}
 				}
             },
             {
