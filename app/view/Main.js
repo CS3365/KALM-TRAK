@@ -57,11 +57,11 @@ Ext.define("KALMTRAK.view.Main", {
         
         items: [
             {
-                title: 'KALMTRAK',
+                title: 'KALM TRAK',
                 iconCls: 'home',
-                
-                //styleHtmlContent: true,
-                //scrollable: true,
+                styleHtmlContent: true,
+                scrollable: true,
+				
 				var formPanel = Ext.create('Ext.form.Panel', {
 					fullscreen: true,
 
