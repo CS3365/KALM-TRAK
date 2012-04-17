@@ -17,7 +17,7 @@ Ext.define("KALMTRAK.view.Main", {
                 items: {
                     docked: 'top',
                     xtype: 'titlebar',
-                    title: 'Welcome to KALMTRAK'
+                    title: 'Welcome to KALM TRAK'
                 },
                 
                 html: [
