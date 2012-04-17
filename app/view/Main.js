@@ -1,6 +1,6 @@
 Ext.define("KALMTRAK.view.Main", {
     extend: 'Ext.tab.Panel',
-    requires: ['Ext.TitleBar','Ext.form.Panel'],
+    requires: ['Ext.TitleBar'],
     
     config: {
         tabBarPosition: 'bottom',
@@ -9,63 +9,21 @@ Ext.define("KALMTRAK.view.Main", {
             {
                 title: 'Welcome to KALMTRAK',
                 iconCls: 'home',
-                var formPanel = Ext.create('Ext.form.Panel', {
-					fullscreen: true,
+                
+                styleHtmlContent: true,
+                scrollable: true,
 
-					items: [{
-						xtype: 'fieldset',
-						items: [
-							{
-								xtype: 'textfield',
-								name : 'name',
-								label: 'Name'
-							},
-							{
-								xtype: 'emailfield',
-								name : 'email',
-								label: 'Email'
-							},
-							{
-								xtype: 'passwordfield',
-								name : 'password',
-								label: 'Password'
-							}
-						]
-					}]
-				});
-
-				formPanel.add({
-					xtype: 'toolbar',
-					//docked: 'bottom',
-					layout: { pack: 'center' },
-					items: [
-						{
-							xtype: 'button',
-							text: 'Set Data',
-							handler: function() {
-								formPanel.setValues({
-									name: 'Ed',
-									email: 'ed@sencha.com',
-									password: 'secret'
-								})
-							}
-						},
-						{
-							xtype: 'button',
-							text: 'Get Data',
-							handler: function() {
-								Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
-							}
-						},
-						{
-							xtype: 'button',
-							text: 'Clear Data',
-							handler: function() {
-								formPanel.reset();
-							}
-						}
-					]
-				});
+                items: {
+                    docked: 'top',
+                    xtype: 'titlebar',
+                    title: 'Welcome to Sencha Touch 2'
+                },
+                
+                html: [
+                    "test2 -You've just generated a new Sencha Touch 2 project. What you're looking at right now is the ",
+                    "contents of <a target='_blank' href=\"app/view/Main.js\">app/view/Main.js</a> - edit that file ",
+                    "and refresh to change what's rendered here."
+                ].join("")
             },
             {
                 title: 'Get Started',
