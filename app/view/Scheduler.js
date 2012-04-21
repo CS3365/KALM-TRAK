@@ -2,7 +2,6 @@ Ext.define("KALMTRAK.view.Scheduler", {
   extend: "Ext.Panel",
   xtype: 'ktscheduler',
   requires: [
-    'KALMTRAK.view.TimePicker',
     'Ext.ux.field.DateTimePicker'
   ],
 
