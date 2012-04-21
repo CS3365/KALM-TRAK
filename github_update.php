@@ -1,6 +1,6 @@
 <?php
 
-`git pull`;        //pull the latest data
-`compass compile`; //compile sass
+`git pull`;         //pull the latest data
+`compass compile`;  //compile sass
 
 ?>

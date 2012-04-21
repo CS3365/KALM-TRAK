@@ -11,7 +11,7 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
-    views: ['Main'],
+    views: ['Main'],//, 'Scheduler'],
 
     icon: {
         57: 'resources/icons/Icon.png',
