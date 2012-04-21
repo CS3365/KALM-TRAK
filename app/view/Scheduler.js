@@ -3,7 +3,9 @@ Ext.define("KALMTRAK.view.Scheduler", {
   xtype: 'ktscheduler',
   requires: [
     'Ext.ux.field.DateTimePicker',
-    'Ext.form.Panel'
+    'Ext.form.Panel',
+    'KALMTRAK.view.WeekdayChooser',
+    'KALMTRAK.view.ScheduledEventsList'
   ],
   config: {
     title: 'Scheduler',
@@ -40,6 +42,10 @@ Ext.define("KALMTRAK.view.Scheduler", {
               slotOrder: ['month', 'day', 'year','hour','minute','ampm']
             }
           }, {
+            xtype: 'weekdaychooserfield',
+            label: 'Days of Week',
+            name: 'dow'
+          }/*, {
             xtype: 'selectfield',
             label: 'Days of Week',
             options: [
@@ -49,7 +55,7 @@ Ext.define("KALMTRAK.view.Scheduler", {
               {text: 'Tuesday, Thursday', value: 'tr'},
               {text: 'Weekends', value: 'satsun'}
             ]
-          },
+          }*/
           /*//every day checkbox
           {
             xtype: 'checkboxfield',
@@ -88,7 +94,9 @@ Ext.define("KALMTRAK.view.Scheduler", {
             checked: false
           }//*/
         ]
-      }
+      }/*, {
+        xtype: 'scheduledeventslist'
+      }*/
     ]
   }
 });
