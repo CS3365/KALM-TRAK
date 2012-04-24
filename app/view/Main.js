@@ -30,7 +30,14 @@ Ext.define("KALMTRAK.view.Main", {
                 label: 'Password:'
               }
             ]
-          }
+          },
+		  {
+			xtype: 'button',
+            text: 'Login'
+            /*handler: function() {
+                Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
+            }*/
+		  }
         ]
       },
       {
