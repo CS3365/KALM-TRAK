@@ -3,7 +3,7 @@ Ext.define("KALMTRAK.view.Main", {
   extend: 'Ext.tab.Panel',
   requires: [
     'Ext.TitleBar',
-    'KALMTRAK.view.Scheduler'
+    'KALMTRAK.view.Scheduler',
 	'KALMTRAK.view.Loginview'
   ],
 
