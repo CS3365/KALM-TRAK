@@ -13,7 +13,8 @@ Ext.define("KALMTRAK.view.Main", {
 	  {
         title: 'Login',
         iconCls: 'star',
-        items: {xtype: 'ktlogin'}
+		layout: 'fit',
+        items: {xtype:'ktlogin'}
       },
       {
         title: 'Scheduler',

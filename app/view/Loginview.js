@@ -5,7 +5,7 @@ Ext.define("KALMTRAK.view.Loginview", {
     'Ext.form.Panel'
   ],
   config: {
-    title: 'KALMTRAK Login',
+    title: 'Login',
     items: [
 		{
 		 xtype: 'fieldset',
