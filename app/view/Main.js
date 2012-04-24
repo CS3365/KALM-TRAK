@@ -30,7 +30,28 @@ Ext.define("KALMTRAK.view.Main", {
             }
           ]
         }//*/
-      }
+      },
+	  {
+		title: 'Login',
+		iconCls: 'star',
+		layout: 'fit',
+		items: [
+			{
+            xtype: 'textfield',
+            name : 'name',
+            label: 'Name'
+			},
+			{
+            xtype: 'emailfield',
+            name : 'email',
+            label: 'Email'
+			},
+			{
+            xtype: 'passwordfield',
+            name : 'password',
+            label: 'Password'
+			}
+		]}
     ]
   }
 });
