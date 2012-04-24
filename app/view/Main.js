@@ -30,11 +30,6 @@ Ext.define("KALMTRAK.view.Main", {
                 label: 'Name'
               },
               {
-                xtype: 'emailfield',
-                name : 'email',
-                label: 'Email'
-              },
-              {
                 xtype: 'passwordfield',
                 name : 'password',
                 label: 'Password'
