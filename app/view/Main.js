@@ -13,23 +13,7 @@ Ext.define("KALMTRAK.view.Main", {
 	  {
         title: 'Login',
         iconCls: 'star',
-		layout: 'fit',
-        items: {		 
-		xtype: 'fieldset',
-         title: 'KALMTRAK Login',
-         items: [
-              {
-                xtype: 'textfield',
-                name : 'name',
-                label: 'Username:'
-              },
-              {
-                xtype: 'passwordfield',
-                name : 'password',
-                label: 'Password:'
-              }
-            ]
-		}
+        items: {xtype: 'ktlogin'}
       },
       {
         title: 'Scheduler',
