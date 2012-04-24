@@ -9,8 +9,8 @@ Ext.define("KALMTRAK.view.Loginview", {
     items: [
 		{
 		 xtype: 'fieldset',
-            title: 'KALMTRAK Login',
-            items: [
+         title: 'KALMTRAK Login',
+         items: [
               {
                 xtype: 'textfield',
                 name : 'name',
