@@ -3,8 +3,8 @@ Ext.define("KALMTRAK.view.Main", {
   extend: 'Ext.tab.Panel',
   requires: [
     'Ext.TitleBar',
-    'KALMTRAK.view.Scheduler',
-	'KALMTRAK.view.Loginview'
+    'KALMTRAK.view.Scheduler'
+	//'KALMTRAK.view.TrakerList.js'
   ],
 
   config: {
@@ -13,7 +13,25 @@ Ext.define("KALMTRAK.view.Main", {
 	  {
         title: 'Login',
         iconCls: 'star',
-        items: {xtype: 'ktlogin'}
+        xtype: 'formpanel',
+        items: [
+          {
+            xtype: 'fieldset',
+            title: 'KALMTRAK Login',
+            items: [
+              {
+                xtype: 'textfield',
+                name : 'name',
+                label: 'Username:'
+              },
+              {
+                xtype: 'passwordfield',
+                name : 'password',
+                label: 'Password:'
+              }
+            ]
+          }
+        ]
       },
       {
         title: 'Scheduler',
