@@ -9,7 +9,7 @@ Ext.define("KALMTRAK.view.Main", {
 
   config: {
     tabBarPosition: 'bottom',
-	zIndex:1,
+	zIndex:50,
     items: [
 	  {
         title: 'Login',

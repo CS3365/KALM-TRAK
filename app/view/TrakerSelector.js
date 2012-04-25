@@ -9,6 +9,7 @@ var treeStore = Ext.create('Ext.data.TreeStore', {
     model: 'ListItem',
     defaultRootProperty: 'items',
     root: {
+		text: 'KALMTRAK Trakkers',
         items: [
             {
                 text: 'Drinks',
@@ -37,6 +38,7 @@ var treeStore = Ext.create('Ext.data.TreeStore', {
 
 var detailContainer = Ext.create('Ext.Container', {
     layout: 'card',
+	zIndex:1,
     flex: 1
 });
 
@@ -44,6 +46,7 @@ var nestedList = Ext.create('Ext.NestedList', {
     store: treeStore,
     detailContainer: detailContainer,
     detailCard: true,
+	zIndex:1,
 	xtype:'ktselector',
     listeners: {
         leafitemtap: function(nestedList, list, index, target, record) {
