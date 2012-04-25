@@ -55,10 +55,11 @@ var nestedList = Ext.create('Ext.NestedList', {
     flex: 1
 });
 
-/*Ext.Viewport.add({
+Ext.Viewport.add({
     layout: 'hbox',
+	zIndex:1,
     items: [
         nestedList,
-        detailContainer
+        detailContainer,
     ]
-});*/
+});
