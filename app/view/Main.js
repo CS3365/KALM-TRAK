@@ -3,8 +3,8 @@ Ext.define("KALMTRAK.view.Main", {
   extend: 'Ext.tab.Panel',
   requires: [
     'Ext.TitleBar',
-    'KALMTRAK.view.Scheduler'
-	//'KALMTRAK.view.TrakerList.js'
+    'KALMTRAK.view.Scheduler',
+	'KALMTRAK.view.TrakerSelector'
   ],
 
   config: {
@@ -34,16 +34,6 @@ Ext.define("KALMTRAK.view.Main", {
 					items: [
 						{
 							xtype: 'button',
-							text: 'Set Data',
-							handler: function() {
-								formPanel.setValues({
-									name: 'Ed',
-									password: 'secret'
-								})
-							}
-						},
-						{
-							xtype: 'button',
 							text: 'Submit',
 							handler: function() {
 								Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
@@ -67,6 +57,12 @@ Ext.define("KALMTRAK.view.Main", {
         iconCls: 'calendar2',
         layout: 'fit',
         items: {xtype:'ktscheduler'}
+      },
+	  {
+        title: 'Controller',
+        iconCls: 'settings',
+        layout: 'fit',
+        items: {xtype:'ktselector'}
       }
     ]
   }
