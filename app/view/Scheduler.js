@@ -94,9 +94,9 @@ Ext.define("KALMTRAK.view.Scheduler", {
             checked: false
           }//*/
         ]
-      }/*, {
+      }, {
         xtype: 'scheduledeventslist'
-      }*/
+      }
     ]
   }
 });
