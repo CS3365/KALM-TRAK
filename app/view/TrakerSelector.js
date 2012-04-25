@@ -1,21 +1,63 @@
-var picker = Ext.create('Ext.Picker', {
+Ext.define('ListItem', {
+    extend: 'Ext.data.Model',
+    config: {
+        fields: ['text']
+    }
+});
+
+var treeStore = Ext.create('Ext.data.TreeStore', {
+    model: 'ListItem',
+    defaultRootProperty: 'items',
+    root: {
+        items: [
+            {
+                text: 'Drinks',
+                items: [
+                    {
+                        text: 'Water',
+                        items: [
+                            { text: 'Still', leaf: true },
+                            { text: 'Sparkling', leaf: true }
+                        ]
+                    },
+                    { text: 'Soda', leaf: true }
+                ]
+            },
+            {
+                text: 'Snacks',
+                items: [
+                    { text: 'Nuts', leaf: true },
+                    { text: 'Pretzels', leaf: true },
+                    { text: 'Wasabi Peas', leaf: true  }
+                ]
+            }
+        ]
+    }
+});
+
+var detailContainer = Ext.create('Ext.Container', {
+    layout: 'card',
+    flex: 1
+});
+
+var nestedList = Ext.create('Ext.NestedList', {
+    store: treeStore,
+    detailContainer: detailContainer,
+    detailCard: true,
 	xtype:'ktselector',
-    doneButton: false,
-    cancelButton: false,
-    toolbar: {
-        ui: 'light',
-        title: 'My Picker!'
-    },
-    slots: [
-        {
-            name : 'limit_speed',
-            title: 'Speed',
-            data : [
-                {text: '50 KB/s', value: 50},
-                {text: '100 KB/s', value: 100},
-                {text: '200 KB/s', value: 200},
-                {text: '300 KB/s', value: 300}
-            ]
+    listeners: {
+        leafitemtap: function(nestedList, list, index, target, record) {
+            var detailCard = nestedList.getDetailCard();
+            detailCard.setHtml('You selected: ' + record.get('text'));
         }
+    },
+    flex: 1
+});
+
+Ext.Viewport.add({
+    layout: 'hbox',
+    items: [
+        nestedList,
+        detailContainer
     ]
 });
