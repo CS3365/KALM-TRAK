@@ -1,75 +1,23 @@
-var data = {
-     text: 'Groceries',
-     items: [{
-         text: 'Drinks',
-         items: [{
-             text: 'Water',
-             items: [{
-                 text: 'Sparkling',
-                 leaf: true
-             }, {
-                 text: 'Still',
-                 leaf: true
-             }]
-         }, {
-             text: 'Coffee',
-             leaf: true
-         }, {
-             text: 'Espresso',
-             leaf: true
-         }, {
-             text: 'Redbull',
-             leaf: true
-         }, {
-             text: 'Coke',
-             leaf: true
-         }, {
-             text: 'Diet Coke',
-             leaf: true
-         }]
-     }, {
-         text: 'Fruit',
-         items: [{
-             text: 'Bananas',
-             leaf: true
-         }, {
-             text: 'Lemon',
-             leaf: true
-         }]
-     }, {
-         text: 'Snacks',
-         items: [{
-             text: 'Nuts',
-             leaf: true
-         }, {
-             text: 'Pretzels',
-             leaf: true
-         }, {
-             text: 'Wasabi Peas',
-             leaf: true
-         }]
-     }]
- };
- 
-  Ext.define('ListItem', {
-     extend: 'Ext.data.Model',
-     config: {
-         fields: [{
-             name: 'text',
-             type: 'string'
-         }]
-     }
- });
- 
-  var store = Ext.create('Ext.data.TreeStore', {
-     model: 'ListItem',
-     defaultRootProperty: 'items',
-     root: data
- });
- 
- var nestedList = Ext.create('Ext.NestedList', {
-     title: 'KALMTRAK Trakkers',
-	 xtype:'ktselector',
-     displayField: 'text',
-     store: store
- });
+var picker = Ext.create('Ext.Picker', {
+	xtype:'ktselector',
+    doneButton: false,
+    cancelButton: false,
+    toolbar: {
+        ui: 'light',
+        title: 'My Picker!'
+    },
+    slots: [
+        {
+            name : 'limit_speed',
+            title: 'Speed',
+            data : [
+                {text: '50 KB/s', value: 50},
+                {text: '100 KB/s', value: 100},
+                {text: '200 KB/s', value: 200},
+                {text: '300 KB/s', value: 300}
+            ]
+        }
+    ]
+});
+Ext.Viewport.add(picker);
+picker.show();
