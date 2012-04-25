@@ -38,6 +38,7 @@ var treeStore = Ext.create('Ext.data.TreeStore', {
 
 var detailContainer = Ext.create('Ext.Container', {
     layout: 'card',
+	xtype:'ktselector',
     flex: 1
 });
 
@@ -45,6 +46,7 @@ var nestedList = Ext.create('Ext.NestedList', {
     store: treeStore,
     detailContainer: detailContainer,
     detailCard: true,
+	xtype:'ktselector',
     listeners: {
         leafitemtap: function(nestedList, list, index, target, record) {
             var detailCard = nestedList.getDetailCard();
@@ -52,12 +54,4 @@ var nestedList = Ext.create('Ext.NestedList', {
         }
     },
     flex: 1
-});
-
-Ext.Viewport.add({
-    layout: 'hbox',
-    items: [
-        nestedList,
-        detailContainer,
-    ]
 });
