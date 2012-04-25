@@ -68,7 +68,6 @@ var data = {
  });
  
  var nestedList = Ext.create('Ext.NestedList', {
-     fullscreen: true,
      title: 'KALMTRAK Trakkers',
 	 xtype:'ktselector',
      displayField: 'text',
