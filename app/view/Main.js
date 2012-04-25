@@ -4,15 +4,21 @@ Ext.define("KALMTRAK.view.Main", {
   requires: [
     'Ext.TitleBar',
     'KALMTRAK.view.Scheduler',
-	'KALMTRAK.view.TrakerSelector'
+    'KALMTRAK.view.TrakerSelector'
   ],
 
   config: {
     tabBarPosition: 'bottom',
-	fullscreen:true,
-	zIndex:10,
+    fullscreen:true,
+    zIndex:10,
     items: [
-	  {
+      {
+        title: 'Controller',
+        iconCls: 'settings',
+        layout: 'fit',
+        items: {xtype:'ktselector'}
+      },
+      {
         title: 'Login',
         iconCls: 'star',
         xtype: 'formpanel',
@@ -31,25 +37,25 @@ Ext.define("KALMTRAK.view.Main", {
                 name : 'password',
                 label: 'Password:'
               },
-			  {    xtype: 'toolbar',
-					layout: { pack: 'center' },
-					items: [
-						{
-							xtype: 'button',
-							text: 'Submit',
-							handler: function() {
-								Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
-							}
-						},
-						{
-							xtype: 'button',
-							text: 'Remember Me',
-							handler: function() {
-								formPanel.reset();
-							}
-						}
-					]
-				}
+              {    xtype: 'toolbar',
+                layout: { pack: 'center' },
+                items: [
+                  {
+                    xtype: 'button',
+                    text: 'Submit',
+                    handler: function() {
+                      Ext.Msg.alert('Form Values', JSON.stringify(formPanel.getValues(), null, 2));
+                    }
+                  },
+                  {
+                    xtype: 'button',
+                    text: 'Remember Me',
+                    handler: function() {
+                      formPanel.reset();
+                    }
+                  }
+                ]
+              }
             ]
           }
         ]
@@ -59,13 +65,7 @@ Ext.define("KALMTRAK.view.Main", {
         iconCls: 'calendar2',
         layout: 'fit',
         items: {xtype:'ktscheduler'}
-      },
-	  {
-        title: 'Controller',
-        iconCls: 'settings',
-        layout: 'fit',
-        items: {xtype:'ktselector'}
-      }
+      }//,
     ]
   }
 });
