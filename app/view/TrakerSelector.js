@@ -19,5 +19,3 @@ var picker = Ext.create('Ext.Picker', {
         }
     ]
 });
-Ext.Viewport.add(picker);
-picker.show();
