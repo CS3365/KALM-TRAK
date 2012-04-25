@@ -38,7 +38,7 @@ var treeStore = Ext.create('Ext.data.TreeStore', {
 
 var detailContainer = Ext.create('Ext.Container', {
     layout: 'card',
-	fullscreen:false,
+	docked:'top'
     flex: 1
 });
 
@@ -46,7 +46,7 @@ var nestedList = Ext.create('Ext.NestedList', {
     store: treeStore,
     detailContainer: detailContainer,
     detailCard: true,
-	fullscreen:false,
+	docked:'top'
 	xtype:'ktselector',
     listeners: {
         leafitemtap: function(nestedList, list, index, target, record) {

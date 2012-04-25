@@ -1,6 +1,6 @@
 
 Ext.define("KALMTRAK.view.Main", {
-  extend: 'Ext.tab.Panel',
+  extend: 'Ext.TabPanel',
   requires: [
     'Ext.TitleBar',
     'KALMTRAK.view.Scheduler',
@@ -9,7 +9,7 @@ Ext.define("KALMTRAK.view.Main", {
 
   config: {
     tabBarPosition: 'bottom',
-	zIndex:50,
+	fullscreen:true,
     items: [
 	  {
         title: 'Login',
