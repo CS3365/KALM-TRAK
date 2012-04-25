@@ -1,6 +1,6 @@
 
 Ext.define("KALMTRAK.view.Main", {
-  extend: 'Ext.TabPanel',
+  extend: 'Ext.tab.Panel',
   requires: [
     'Ext.TitleBar',
     'KALMTRAK.view.Scheduler',
