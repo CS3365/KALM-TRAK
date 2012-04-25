@@ -12,7 +12,7 @@ var treeStore = Ext.create('Ext.data.TreeStore', {
 		text: 'KALMTRAK Trakkers',
         items: [
             {
-                text: 'Drinks',
+                text: 'Brilliant Trakkers',
                 items: [
                     {
                         text: 'Water',
@@ -25,7 +25,7 @@ var treeStore = Ext.create('Ext.data.TreeStore', {
                 ]
             },
             {
-                text: 'Snacks',
+                text: 'Normal Trakkers',
                 items: [
                     { text: 'Nuts', leaf: true },
                     { text: 'Pretzels', leaf: true },
