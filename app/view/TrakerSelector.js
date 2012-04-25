@@ -38,7 +38,7 @@ var treeStore = Ext.create('Ext.data.TreeStore', {
 
 var detailContainer = Ext.create('Ext.Container', {
     layout: 'card',
-	xtype:'ktselector',
+	//xtype:'ktselector',
     flex: 1
 });
 
@@ -56,10 +56,10 @@ var nestedList = Ext.create('Ext.NestedList', {
     flex: 1
 });
 
-Ext.Viewport.add({
+/*Ext.Viewport.add({
     layout: 'hbox',
     items: [
         nestedList,
         detailContainer,
     ]
-});
+});*/
