@@ -3,8 +3,8 @@ Ext.define("KALMTRAK.view.Main", {
   extend: 'Ext.tab.Panel',
   requires: [
     'Ext.TitleBar',
-    'KALMTRAK.view.Scheduler'
-	//'KALMTRAK.view.TrakerSelector'
+    'KALMTRAK.view.Scheduler',
+	'KALMTRAK.view.TrakerSelector'
   ],
 
   config: {
@@ -60,12 +60,12 @@ Ext.define("KALMTRAK.view.Main", {
         layout: 'fit',
         items: {xtype:'ktscheduler'}
       },
-	  /*{
+	  {
         title: 'Controller',
         iconCls: 'settings',
         layout: 'fit',
         items: {xtype:'ktselector'}
-      }*/
+      }
     ]
   }
 });
