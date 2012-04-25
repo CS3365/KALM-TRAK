@@ -45,7 +45,6 @@ var nestedList = Ext.create('Ext.NestedList', {
     store: treeStore,
     detailContainer: detailContainer,
     detailCard: true,
-	xtype:'ktselector',
     listeners: {
         leafitemtap: function(nestedList, list, index, target, record) {
             var detailCard = nestedList.getDetailCard();
@@ -57,6 +56,7 @@ var nestedList = Ext.create('Ext.NestedList', {
 
 Ext.Viewport.add({
     layout: 'hbox',
+	xtype:'ktselector',
 	zIndex:1,
     items: [
         nestedList,
