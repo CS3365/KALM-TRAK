@@ -56,7 +56,6 @@ var nestedList = Ext.create('Ext.NestedList', {
 
 Ext.Viewport.add({
     layout: 'hbox',
-	xtype:'ktselector',
     items: [
         nestedList,
         detailContainer,
