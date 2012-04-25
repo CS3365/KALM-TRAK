@@ -1,12 +1,12 @@
 Ext.define('KALMTRAK.view.TrakerSelector', {
   extend: 'Ext.Container',
-  layout: 'hbox',
   xtype:'ktselector',
   requires: [
     'KALMTRAK.view.TrakerDetails',
     'KALMTRAK.store.TrakerStore'
   ],
   config: {
+    layout: 'hbox',
     items: [
       {
         xtype: 'nestedlist',
@@ -21,7 +21,9 @@ Ext.define('KALMTRAK.view.TrakerSelector', {
           }
         }
       },
-      {xtype: 'ktdetails'}
+      {
+        xtype: 'ktdetails'
+      }
     ]
   }
 });

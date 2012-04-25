@@ -7,10 +7,10 @@ Ext.define('KALMTRAK.store.TrakerStore', {
     model: 'KALMTRAK.model.Traker',
     defaultRootProperty: 'items',
     root: {
-      text: 'KALMTRAK Trakkers',
+      text: 'KALMTRAK Trakers',
       items: [
         {
-          text: 'Brilliant Trakkers',
+          text: 'Brilliant Trakers',
           items: [
             {
               text: 'Water',
@@ -23,7 +23,7 @@ Ext.define('KALMTRAK.store.TrakerStore', {
           ]
         },
         {
-          text: 'Normal Trakkers',
+          text: 'Normal Trakers',
           items: [
             { text: 'Nuts', leaf: true },
             { text: 'Pretzels', leaf: true },

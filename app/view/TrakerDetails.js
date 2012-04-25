@@ -3,6 +3,6 @@ Ext.define('KALMTRAK.view.TrakerDetails', {
   xtype: 'ktdetails',
   config: {
     layout: 'card',
-    flex: 1,
+    flex: 1
   }
 });
