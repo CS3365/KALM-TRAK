@@ -11,7 +11,7 @@ Ext.define('KALMTRAK.view.TrakerSelector', {
       {
         xtype: 'nestedlist',
         store: 'TrakerStore',
-        detailContainer: 'TrakerDetails',
+        //detailContainer: 'TrakerDetails',
         detailCard: true,
         flex: 1,
         listeners: {
