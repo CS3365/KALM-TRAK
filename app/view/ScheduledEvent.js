@@ -33,6 +33,17 @@ Ext.define("KALMTRAK.view.ScheduledEvent", {
         xtype: 'textfield',
         label: 'label'
       }, {
+        xtype: 'datetimepickerfield',
+        label: 'Event Time',
+        name: 'evtTime',
+        value: new Date(),
+        dateTimeFormat: 'g:iA',
+        picker: {
+          minuteInterval: 1,
+          ampm: true,
+          slotOrder: ['hour','minute','ampm']
+        }
+      }, {
         xtype: 'scheduledtrakerfield'
       }
     ]
