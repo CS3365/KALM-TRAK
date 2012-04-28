@@ -11,8 +11,8 @@ Ext.define('KALMTRAK.view.TrakerSelector', {
       {
         xtype: 'nestedlist',
         store: 'TrakerStore',
-        //detailContainer: 'TrakerDetails',
-        //detailCard: true,
+        detailContainer: 'TrakerDetails',
+        detailCard: true,
         flex: 1,
         listeners: {
           leafitemtap: function(nestedList, list, index, target, record) {

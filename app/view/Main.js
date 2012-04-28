@@ -13,12 +13,6 @@ Ext.define("KALMTRAK.view.Main", {
     zIndex:10,
     items: [
       {
-        title: 'Controller',
-        iconCls: 'settings',
-        layout: 'fit',
-        items: {xtype:'ktselector'}
-      },
-      {
         title: 'Login',
         iconCls: 'star',
         xtype: 'formpanel',
@@ -65,7 +59,13 @@ Ext.define("KALMTRAK.view.Main", {
         iconCls: 'calendar2',
         layout: 'fit',
         items: {xtype:'ktscheduler'}
-      }//,
+      },
+	  {
+        title: 'Controller',
+        iconCls: 'settings',
+        layout: 'fit',
+        items: {xtype:'ktselector'}
+      }
     ]
   }
 });
