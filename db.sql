@@ -18,7 +18,7 @@ CREATE TABLE `kt`.`area` (
     REFERENCES `kt`.`user` (`uid`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  PRIMARY KEY(`rid`)
+  PRIMARY KEY(`aid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 CREATE TABLE `kt`.`traker` (
