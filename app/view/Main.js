@@ -14,6 +14,19 @@ Ext.define("KALMTRAK.view.Main", {
     fullscreen:true,
     zIndex:10,
     items: [
+	  {
+		title: 'KALMTRAK',
+		iconCls: 'home',
+		items: [
+			{
+				xtype: 'image',
+				height:400,
+				width:1000,
+				centered:true,
+				src: 'http://acmttu.org/wp-content/uploads/2012/04/KALMTRAK-Logo.png'
+			}
+		]
+      },
       {
         title: 'Login',
         iconCls: 'star',
