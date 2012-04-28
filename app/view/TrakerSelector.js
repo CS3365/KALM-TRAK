@@ -16,10 +16,12 @@ Ext.define('KALMTRAK.view.TrakerSelector', {
         flex: 1,
         listeners: {
           leafitemtap: function(nestedList, list, index, target, record) {
-            var detailCard = nestedList.getDetailCard();
+            var detailCard = Ext.getCmp('TrakerDetails');//nestedList.getDetailCard();
             detailCard.setHtml('You selected: ' + record.get('text'));
           }
         }
+      }, {
+        xtype: 'ktdetails'
       }
     ]
   }
