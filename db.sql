@@ -25,7 +25,7 @@ CREATE TABLE `kt`.`traker` (
   `tid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `aid` INT(10) UNSIGNED NOT NULL,
   `name` VARCHAR(100) NOT NULL,
-  `type` ENUM('smart','brilliant') NOT NULL DEFAULT('smart'),
+  `type` ENUM('smart','brilliant') NOT NULL DEFAULT 'smart',
   `status` TINYINT(1) NOT NULL,
   `avgPowerUsage` DECIMAL(10,3) NOT NULL,
   `avgHoursUsage` DECIMAL(4,2) NOT NULL,
