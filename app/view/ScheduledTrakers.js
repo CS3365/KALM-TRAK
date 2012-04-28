@@ -17,9 +17,6 @@ Ext.define('KALMTRAK.view.ScheduledTrakers', {
         align: 'stretch'
       },
       items: [
-        /*{xtype: 'ktschedtrakerstatus'},
-        {xtype: 'ktschedtrakerstatus'},
-        {xtype: 'ktschedtrakerstatus'},*/
         {
           xtype: 'button',
           ui: 'confirm',
@@ -31,7 +28,8 @@ Ext.define('KALMTRAK.view.ScheduledTrakers', {
               pt.getItems().length-1,
               {
                 xtype: 'ktschedtrakerstatus'
-              });
+              }
+            );
           }
         }
       ]

@@ -10,7 +10,7 @@ CREATE TABLE `kt`.`users` (
   PRIMARY KEY(`uid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE `kt`.`area` (
+CREATE TABLE `kt`.`areas` (
   `aid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `uid` INT(10) UNSIGNED NOT NULL,
   `name` VARCHAR(50) NOT NULL,
@@ -21,12 +21,12 @@ CREATE TABLE `kt`.`area` (
   PRIMARY KEY(`aid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE `kt`.`traker` (
+CREATE TABLE `kt`.`trakers` (
   `tid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `aid` INT(10) UNSIGNED NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `type` ENUM('smart','brilliant') NOT NULL DEFAULT 'smart',
-  `status` TINYINT(1) NOT NULL,
+  `status` TINYINT(1) NOT NULL DEFAULT 1,
   `avgPowerUsage` DECIMAL(10,3) NOT NULL,
   `avgHoursUsage` DECIMAL(4,2) NOT NULL,
   `stdevHoursUsage` DECIMAL(3,2) NOT NULL,
@@ -38,7 +38,7 @@ CREATE TABLE `kt`.`traker` (
   PRIMARY KEY(`tid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
-CREATE TABLE `kt`.`powertick` (
+CREATE TABLE `kt`.`powerticks` (
   `tid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `when` DATETIME NOT NULL,
   `level` DECIMAL(10,3) UNSIGNED NOT NULL,
@@ -50,3 +50,13 @@ CREATE TABLE `kt`.`powertick` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- TODO: Input sample trakers
+
+INSERT INTO `kt`.`users`(uid,name,pass) VALUES
+  (1,'user','pass');
+
+INSERT INTO `kt`.`areas`(uid,aid,name) VALUES
+  (1,1,'Living Room');
+
+INSERT INTO `kt`.`trakers`
+  (tid,aid,name,avgPowerUsage,avgHoursUsage,stdevHoursUsage,avgBlocks) VALUES
+  (1,1,'Chandelere',500,2,.5,2)
