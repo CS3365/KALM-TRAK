@@ -3,7 +3,7 @@ Ext.define('KALMTRAK.view.ScheduledTrakers', {
   xtype: 'scheduledtrakerfield',
 
   requires: [
-    'KALMTRAK.view.TrakerStatus'
+    'KALMTRAK.view.ScheduledTrakerStatus'
   ],
 
   config: {
@@ -14,12 +14,18 @@ Ext.define('KALMTRAK.view.ScheduledTrakers', {
       baseCls: 'x-form-field',
       layout: {
         type: 'vbox',
-        align: 'top'
+        align: 'stretch'
       },
       items: [
-        {xtype: 'ktstatus'},
-        {xtype: 'ktstatus'},
-        {xtype: 'ktstatus'}
+        {xtype: 'ktschedtrakerstatus'},
+        {xtype: 'ktschedtrakerstatus'},
+        {xtype: 'ktschedtrakerstatus'},
+        {
+          xtype: 'button',
+          ui: 'confirm',
+          iconCls: 'add',
+          iconMask: 'true'
+        }
       ]
     }
   }

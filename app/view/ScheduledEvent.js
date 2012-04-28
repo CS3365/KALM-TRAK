@@ -17,22 +17,22 @@ Ext.define("KALMTRAK.view.ScheduledEvent", {
         },
         items: [
           {
-            html: 'Scheduled Event Title'
+            html: 'Scheduled Event'
           }, {
             xtype: 'spacer'
           }, {
             xtype: 'button',
-            ui: 'action',
+            ui: 'decline',
             iconCls: 'doc_delete',
-            iconMask: true
+            iconMask: true,
+            handler: function() {
+              alert('delete pressed');
+            }
           }
         ]
       },
       // field items
       {
-        xtype: 'textfield',
-        label: 'label'
-      }, {
         xtype: 'datetimepickerfield',
         label: 'Event Time',
         name: 'evtTime',

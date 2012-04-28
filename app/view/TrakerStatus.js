@@ -4,7 +4,6 @@ Ext.define('KALMTRAK.view.TrakerStatus', {
 
   config: {
     label: 'TRAKer n',
-    width: '100%',
     value: 1
   }
 });

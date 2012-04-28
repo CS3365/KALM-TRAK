@@ -8,6 +8,7 @@ Ext.define('KALMTRAK.view.ScheduledEventsList', {
 
   config: {
     title: 'Events',
+    id: 'ScheduledEventsList',
     items: [
       {
         docked: 'bottom',
@@ -19,9 +20,13 @@ Ext.define('KALMTRAK.view.ScheduledEventsList', {
           {xtype: 'spacer'},
           {
             xtype: 'button',
-            ui: 'action',
+            ui: 'confirm',
             iconCls: 'doc_new',
-            iconMask: true
+            iconMask: true,
+            handler: function() {
+              var lst = Ext.getCmp('ScheduledEventsList');
+              lst.add({xtype:'scheduledevent'});
+            }
           }
         ]
       }, {
