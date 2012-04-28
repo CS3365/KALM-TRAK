@@ -31,8 +31,8 @@ CREATE TABLE `kt`.`traker` (
   `avgHoursUsage` DECIMAL(4,2) NOT NULL,
   `stdevHoursUsage` DECIMAL(3,2) NOT NULL,
   `avgBlcoks` DECIMAL(4,2) NOT NULL,
-  CONSTRAINT `fk_traker_area` FOREIGN KEY(`rid`)
-    REFERENCES `kt`.`area` (`rid`)
+  CONSTRAINT `fk_traker_area` FOREIGN KEY(`aid`)
+    REFERENCES `kt`.`area` (`aid`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   PRIMARY KEY(`tid`)
