@@ -17,9 +17,9 @@ Ext.define('KALMTRAK.view.ScheduledTrakers', {
         align: 'top'
       },
       items: [
-        {xtype: 'trakerstatus'},
-        {xtype: 'trakerstatus'},
-        {xtype: 'trakerstatus'}
+        {xtype: 'ktstatus'},
+        {xtype: 'ktstatus'},
+        {xtype: 'ktstatus'}
       ]
     }
   }
