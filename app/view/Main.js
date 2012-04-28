@@ -4,7 +4,9 @@ Ext.define("KALMTRAK.view.Main", {
   requires: [
     'Ext.TitleBar',
     'KALMTRAK.view.Scheduler',
-    'KALMTRAK.view.TrakerSelector'
+    'KALMTRAK.view.TrakerSelector',
+	'KALMTRAK.view.SmartTrakerDescriptor',
+	'KALMTRAK.view.BrilliantTrakerDescriptor'
   ],
 
   config: {
@@ -12,19 +14,6 @@ Ext.define("KALMTRAK.view.Main", {
     fullscreen:true,
     zIndex:10,
     items: [
-	  {
-		title: 'KALMTRAK',
-		iconCls: 'home',
-		items: [
-			{
-				xtype: 'image',
-				height:400,
-				width:1000,
-				centered:true,
-				src: '../../resources/icons/KALMTRAK_Logo.png'
-			}
-		]
-      },
       {
         title: 'Login',
         iconCls: 'star',
@@ -78,6 +67,18 @@ Ext.define("KALMTRAK.view.Main", {
         iconCls: 'settings',
         layout: 'fit',
         items: {xtype:'ktselector'}
+      },
+	  {
+        title: '&nbsp;Smart TRAKer Details&nbsp;',
+        iconCls: 'compose',
+        layout: 'fit',
+        items: {xtype:'ktsmartdescriptor'}
+      },
+	  {
+        title: '&nbsp;Brilliant TRAKer Details&nbsp;',
+        iconCls: 'compose',
+        layout: 'fit',
+        items: {xtype:'ktbrilliantdescriptor'}
       }
     ]
   }
