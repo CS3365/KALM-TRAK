@@ -20,9 +20,6 @@ Ext.define('KALMTRAK.view.TrakerSelector', {
             detailCard.setHtml('You selected: ' + record.get('text'));
           }
         }
-      },
-      {
-        xtype: 'ktdetails'
       }
     ]
   }
