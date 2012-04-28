@@ -12,6 +12,7 @@ Ext.define('KALMTRAK.view.ScheduledEventsList', {
     items: [
       {
         docked: 'bottom',
+        instructions: "Click add to add an event",
         layout: {
           type: 'hbox',
           align: 'center'
@@ -29,10 +30,6 @@ Ext.define('KALMTRAK.view.ScheduledEventsList', {
             }
           }
         ]
-      }, {
-        xtype: 'scheduledevent'
-      }, {
-        xtype: 'scheduledevent'
       }
     ]
   }

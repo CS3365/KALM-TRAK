@@ -26,7 +26,7 @@ Ext.define("KALMTRAK.view.ScheduledEvent", {
             iconCls: 'doc_delete',
             iconMask: true,
             handler: function() {
-              alert('delete pressed');
+              Ext.getCmp('ScheduledEventsList').remove(this.getParent().getParent());
             }
           }
         ]

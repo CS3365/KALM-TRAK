@@ -13,7 +13,6 @@ Ext.define("KALMTRAK.view.Scheduler", {
       {
         xtype: 'fieldset',
         title: 'Duration',
-        instructions: 'duration instructions in app/view/scheduler.js',
         items: [
           {
             xtype: 'datetimepickerfield',

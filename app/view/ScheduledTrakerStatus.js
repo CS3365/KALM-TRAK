@@ -21,6 +21,8 @@ Ext.define('KALMTRAK.view.ScheduledTrakerStatus', {
         iconCls: 'delete',
         iconMask: true,
         handler: function() {
+          var pt = this.getParent();
+          pt.getParent().remove(pt);
         }
       }
     ]
