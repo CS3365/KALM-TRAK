@@ -4,7 +4,7 @@ CREATE DATABASE `kt`;
 
 -- Create tables
 CREATE TABLE `kt`.`users` (
-  `uid` INT(10) UNISIGNED NOT NULL AUTO_INCREMENT,
+  `uid` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(30) NOT NULL,
   `pass` VARCHAR(30) NOT NULL  -- note: raw text, not secure!!!
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
