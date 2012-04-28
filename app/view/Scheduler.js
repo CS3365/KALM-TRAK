@@ -45,54 +45,7 @@ Ext.define("KALMTRAK.view.Scheduler", {
             xtype: 'weekdaychooserfield',
             label: 'Days of Week',
             name: 'dow'
-          }/*, {
-            xtype: 'selectfield',
-            label: 'Days of Week',
-            options: [
-              {text: 'Everyday', value: 'everyday'},
-              {text: 'Monday - Friday', value: 'm-f'},
-              {text: 'Monday, Wednesday, Friday', value: 'mwf'},
-              {text: 'Tuesday, Thursday', value: 'tr'},
-              {text: 'Weekends', value: 'satsun'}
-            ]
-          }*/
-          /*//every day checkbox
-          {
-            xtype: 'checkboxfield',
-            label: 'Sunday',
-            name: 'schedSun',
-            checked: false
-          }, {
-            xtype: 'checkboxfield',
-            label: 'Monday',
-            name: 'schedMon',
-            checked: true
-          }, {
-            xtype: 'checkboxfield',
-            label: 'Tuesday',
-            name: 'schedTue',
-            checked: false
-          }, {
-            xtype: 'checkboxfield',
-            label: 'Wednesday',
-            name: 'schedWed',
-            checked: true
-          }, {
-            xtype: 'checkboxfield',
-            label: 'Thursday',
-            name: 'schedThu',
-            checked: false
-          }, {
-            xtype: 'checkboxfield',
-            label: 'Friday',
-            name: 'schedFri',
-            checked: true
-          }, {
-            xtype: 'checkboxfield',
-            label: 'Saturday',
-            name: 'schedSat',
-            checked: false
-          }//*/
+          }
         ]
       }, {
         xtype: 'scheduledeventslist'
