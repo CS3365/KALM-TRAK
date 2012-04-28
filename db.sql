@@ -15,7 +15,7 @@ CREATE TABLE `kt`.`area` (
   `uid` INT(10) UNSIGNED NOT NULL,
   `name` VARCHAR(50) NOT NULL,
   CONSTRAINT `fk_area_user` FOREIGN KEY(`uid`)
-    REFERENCED `kt`.`user` (`uid`)
+    REFERENCES `kt`.`user` (`uid`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   PRIMARY KEY(`rid`)
@@ -32,7 +32,7 @@ CREATE TABLE `kt`.`traker` (
   `stdevHoursUsage` DECIMAL(3,2) NOT NULL,
   `avgBlcoks` DECIMAL(4,2) NOT NULL,
   CONSTRAINT `fk_traker_area` FOREIGN KEY(`rid`)
-    REFERENCED `kt`.`area` (`rid`)
+    REFERENCES `kt`.`area` (`rid`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   PRIMARY KEY(`tid`)
@@ -43,7 +43,7 @@ CREATE TABLE `kt`.`powertick` (
   `when` DATETIME NOT NULL,
   `level` DECIMAL(10,3) UNSIGNED NOT NULL,
   CONSTRAINT `fk_power_traker` FOREIGN KEY(`tid`)
-    REFERENCED `kt`.`traker` (`tid`)
+    REFERENCES `kt`.`traker` (`tid`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
   PRIMARY KEY(`tid`, `when`)
