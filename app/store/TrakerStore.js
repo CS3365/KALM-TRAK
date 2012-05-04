@@ -95,6 +95,7 @@ Ext.define('KALMTRAK.store.TrakerStore', {
 				{ text: 'TV 5', leaf:true }
 				]
 			}
+			]
         },
 		{
           text: 'KALMTRAK Breaker Box',
