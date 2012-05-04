@@ -28,8 +28,10 @@ echo $current_t . '<br>';
 // put the following in a loop for all trakers, only one traker in prototype {
 // ***********************************************************************
 
-$query = "SELECT `tid` FROM trakers";
+$query = "SELECT * FROM trakers";
 $result = mysql_query($query);
+    echo $result . '<br>';
+    
 $num_rows = mysql_num_rows($result);
 for ($j = 0; $j < num_rows; $j++){
   // Get the tracker ID you want to update here. Hardcoded for the prototype
