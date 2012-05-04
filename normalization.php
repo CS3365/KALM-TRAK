@@ -65,12 +65,12 @@ for ($j = 0; $j < num_rows; $j++){
   }
 
   // difference of time in days - number of days in a month is variable
-  $year = trk_date[0];
+  $year = $trk_date[0];
 
   // Get the number of days until the end of the "first" month 
-  $day_diff = date('t', mktime(0,0,0, trk_date[1], 1, trk_date[0]) - trk_date[2]);
+  $day_diff = date('t', mktime(0,0,0, trk_date[1], 1, $trk_date[0]) - $trk_date[2]);
 
-  for($i=trk_date[1]+1; $i<$month_diff+trk_date[1]-1; $i++){
+  for($i=$trk_date[1]+1; $i<$month_diff+$trk_date[1]-1; $i++){
 
     // Accounts for leap years. The number of days in a month do not
     // fluctuate, except for February on leap years
@@ -96,7 +96,7 @@ for ($j = 0; $j < num_rows; $j++){
   //-----------------------------------------------------------------
 
   // add data for every minute
-  $month = trk_dt[1];
+  $month = $trk_dt[1];
 
   // Get the power level for the traker
   $level_query = "SELECT `avgPowerUsage` FROM trakers WHERE `tid`=1";
