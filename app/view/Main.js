@@ -14,24 +14,18 @@ Ext.define("KALMTRAK.view.Main", {
     fullscreen:true,
     zIndex:10,
     items: [
-	  {
-		title: 'KALMTRAK',
-		iconCls: 'home',
-		items: [
-			{
-				xtype: 'image',
-				height:400,
-				width:1000,
-				centered:true,
-				src: 'http://acmttu.org/wp-content/uploads/2012/04/KALMTRAK-Logo.png'
-			}
-		]
-      },
       {
         title: 'Login',
         iconCls: 'star',
         xtype: 'formpanel',
         items: [
+		  {
+			html: [
+					'<center><img height=300 src="http://acmttu.org/wp-content/uploads/2012/04/KALMTRAK-Logo.png" style="margin-top:10%"/></center>',
+					'<center><h1>Welcome to KALMTRAK</h1></center>',
+					"<center><p>Created by Kevin Thomas, Austin Ray, Louis Alridge, and Mike Kent</p></center>"
+			].join("")
+		  },
           {
             xtype: 'fieldset',
             title: 'KALMTRAK Login',
