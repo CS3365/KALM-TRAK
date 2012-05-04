@@ -55,8 +55,35 @@ INSERT INTO `kt`.`users`(uid,name,pass) VALUES
   (1,'user','pass');
 
 INSERT INTO `kt`.`areas`(uid,aid,name) VALUES
-  (1,1,'Living Room');
+  (1,1,'Foyer'),
+  (1,2,'Master Bedroom'),
+  (1,3,'Living Room'),
+  (1,4,'Billy\'s Bedroom'),
+  (1,5,'Upstairs Hallway'),
+  (1,6,'Games Room'),
+  (1,7,'Mary\'s Bedroom');
 
 INSERT INTO `kt`.`trakers`
   (tid,aid,name,avgPowerUsage,avgHoursUsage,stdevHoursUsage,avgBlocks) VALUES
-  (1,1,'Chandelere',500,2,.5,2)
+  (1,1,'Lamp 1',500,2,.5,2),
+  (1,2,'Lamp 2',500,2,.5,2),
+  (1,3,'Lamp 3',500,2,.5,2),
+  (2,4,'Lamp 4',500,2,.5,2),
+  (2,5,'Lamp 5',500,2,.5,2),
+  (2,6,'Television 1',500,2,.5,2),
+  (3,7,'Lamp 6',500,2,.5,2),
+  (3,8,'Lamp 7',500,2,.5,2),
+  (3,9,'Television 2',500,2,.5,2),
+  (4,10,'Lamp 8',500,2,.5,2),
+  (4,11,'Lamp 9',500,2,.5,2),
+  (4,12,'Televsion 3',500,2,.5,2),
+  (5,13,'Lamp 10',500,2,.5,2),
+  (5,14,'Lamp 11',500,2,.5,2),
+  (6,15,'Lamp 12',500,2,.5,2),
+  (6,16,'Lamp 13',500,2,.5,2),
+  (6,17,'XBox',500,2,.5,2),
+  (6,18,'Wii',500,2,.5,2),
+  (6,18,'Television 4',500,2,.5,2),
+  (7,20,'Lamp 14',500,2,.5,2),
+  (7,21,'Lamp 14',500,2,.5,2),
+  (7,22,'Television 5',500,2,.5,2);
