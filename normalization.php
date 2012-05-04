@@ -54,7 +54,7 @@ for ($j = 0; $j < $num_rows; $j++){
  
   // Get the amount of time since the last update
   $trk_dt = explode(" ", $date_added[1]);
-  echo 'Trk_dt: ' . $trk_dt[1] . '<br>';
+  echo 'Trk_dt: ' . $trk_dt[0] . ' ' . $trk_dt[1] . '<br>';
 
   // $trk_date[0] = YYYY; $trk_date[1] = MM; $trk_date[2] = DD
   $trk_date = explode("-", $trk_dt[0]);
