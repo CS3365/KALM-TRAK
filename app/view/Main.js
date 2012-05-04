@@ -21,9 +21,7 @@ Ext.define("KALMTRAK.view.Main", {
         items: [
 		  {
 			html: [
-					'<center><img height=300 src="http://acmttu.org/wp-content/uploads/2012/04/KALMTRAK-Logo.png" style="margin-top:10%"/></center>',
-					'<center><h1>Welcome to KALMTRAK</h1></center>',
-					"<center><p>Created by Kevin Thomas, Austin Ray, Louis Alridge, and Mike Kent</p></center>"
+					'<center><img height=340 src="http://acmttu.org/wp-content/uploads/2012/05/Kalmtrak-new.png" style="margin-top:10%"/></center>',
 			].join("")
 		  },
           {
