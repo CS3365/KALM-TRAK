@@ -18,8 +18,12 @@ function login(){
 // connect to the db
 $db_server = login();
 
+    
+echo 'hello world <br>';
+    
 // Current time
 $current_t = time();
+echo $current_t . '<br>';
 
 // put the following in a loop for all trakers, only one traker in prototype {
 // ***********************************************************************
