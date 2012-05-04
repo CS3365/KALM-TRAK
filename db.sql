@@ -30,7 +30,7 @@ CREATE TABLE `kt`.`trakers` (
   `avgPowerUsage` DECIMAL(10,3) NOT NULL,
   `avgHoursUsage` DECIMAL(4,2) NOT NULL,
   `stdevHoursUsage` DECIMAL(3,2) NOT NULL,
-  `avgBlcoks` DECIMAL(4,2) NOT NULL,
+  `avgBlocks` DECIMAL(4,2) NOT NULL,
   CONSTRAINT `fk_traker_area` FOREIGN KEY(`aid`)
     REFERENCES `kt`.`area` (`aid`)
     ON DELETE CASCADE
