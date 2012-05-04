@@ -36,6 +36,7 @@ $num_rows = mysql_num_rows($result);
 echo $num_rows . '<br>';
     
 for ($j = 0; $j < $num_rows; $j++){
+    echo 'in for loop <br>';
   // Get the tracker ID you want to update here. Hardcoded for the prototype
   $tracker_row = mysql_fetch_row($result);
   $tracker_id = $tracker_row[0]; 
