@@ -58,11 +58,11 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // $trk_date[0] = YYYY; $trk_date[1] = MM; $trk_date[2] = DD
   $trk_date = explode("-", $trk_dt[0]);
-  echo 'Trk_date: ' . $trk_date[0] . '<br>';
+  echo 'Trk_date: ' . $trk_date[0] . ' ' . $trk_date[1] . ' ' . $trk_date[2] . ' ' . '<br>';
 
   // $trk_time[0] = HH; $trk_time[1] = MM; $trk_time[2] = SS
   $trk_time = explode(":", $trk_dt[1]);
-  echo 'Trk_time: ' . $trk_time[0] . '<br>';
+  echo 'Trk_time: ' . $trk_time[0] . ' ' . $trk_time[1] . ' ' . $trk_time[2] . ' ' . '<br>';
 
   // difference in years
   $year_diff = $trk_date[0] - date('Y');
