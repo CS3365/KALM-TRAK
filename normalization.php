@@ -42,7 +42,7 @@ for ($j = 0; $j < $num_rows; $j++){
   $tracker_id = $tracker_row[0]; 
   echo 'Traker ID: ' . $tracker_id . '<br>';
   // Get the last entry of a traker
-  $query = "SELECT * FROM powerticks WHERE tid=" . tracker_id . " ORDER BY when DESC LIMIT 1";
+  $query = "SELECT * FROM powerticks WHERE tid=" . tracker_id . " ORDER BY `when` DESC LIMIT 1";
   $result = mysql_query($query);
 
   // Print any errors from retrieving result
