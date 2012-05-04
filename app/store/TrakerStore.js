@@ -197,7 +197,8 @@ Ext.define('KALMTRAK.store.TrakerStore', {
 			},
 			{ text: 'Bedroom 1 Closet',
 				items:[
-				{ text: 'Power all outlets and lights', leaf:true }
+				{ text: 'Power all outlets and lights', leaf:true },
+				{ text: 'Outlet 45', leaf:true }
 				]
 			},
 			{ text: 'Upstairs Bathroom 1' ,
@@ -226,7 +227,7 @@ Ext.define('KALMTRAK.store.TrakerStore', {
 				{ text: 'Outlet 51', leaf:true },
 				{ text: 'Outlet 52', leaf:true },
 				{ text: 'Outlet 53', leaf:true },
-				{ text: 'Outlet 55', leaf:true }
+				{ text: 'Outlet 54', leaf:true }
 				]
 			},
 			{ text: 'Games Room Closet',
@@ -237,30 +238,30 @@ Ext.define('KALMTRAK.store.TrakerStore', {
 			{ text: 'Upstairs Bathroom 2' ,
 				items:[
 				{ text: 'Power to all outlets and lights', leaf:true },
-				{ text: 'Outlet 56', leaf:true }
+				{ text: 'Outlet 55', leaf:true }
 				]
 			},
 			{ text: 'Bedroom 3',
 				items:[
 				{ text: 'Power to all outlets and lights', leaf:true },
+				{ text: 'Outlet 56', leaf:true },
 				{ text: 'Outlet 57', leaf:true },
-				{ text: 'Outlet 58', leaf:true },
-				{ text: 'Outlet 59', leaf:true }
+				{ text: 'Outlet 58', leaf:true }
 				]
 			},
 			{ text: 'Bedroom 3 Closet' ,
 				items:[
 				{ text: 'Power to all outlets and lights', leaf:true },
-				{ text: 'Outlet 60', leaf:true }
+				{ text: 'Outlet 59', leaf:true }
 				]
 			},
 			{ text: 'Outside Outlets',
 				items:[
 				{ text: 'Power to all outlets and lights', leaf:true },
+				{ text: 'Outlet 60', leaf:true },
 				{ text: 'Outlet 61', leaf:true },
 				{ text: 'Outlet 62', leaf:true },
-				{ text: 'Outlet 63', leaf:true },
-				{ text: 'Outlet 64', leaf:true }
+				{ text: 'Outlet 63', leaf:true }
 				]
 			},
           ]
