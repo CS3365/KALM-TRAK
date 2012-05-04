@@ -52,15 +52,15 @@ for ($j = 0; $j < $num_rows; $j++){
   //-----------------------------------------------------------------
   // Get the amount of time since the last update
   $trk_dt = explode(" ", $result[1]);
-  echo 'Trk_dt: ' . $trk_dt . '<br>';
+  echo 'Trk_dt: ' . $trk_dt[1] . '<br>';
 
   // $trk_date[0] = YYYY; $trk_date[1] = MM; $trk_date[2] = DD
   $trk_date = explode("-", $trk_dt[0]);
-  echo 'Trk_date: ' . $trk_date . '<br>';
+  echo 'Trk_date: ' . $trk_date[1] . '<br>';
 
   // $trk_time[0] = HH; $trk_time[1] = MM; $trk_time[2] = SS
   $trk_time = explode(":", $trk_dt[1]);
-  echo 'Trk_time: ' . $trk_time . '<br>';
+  echo 'Trk_time: ' . $trk_time[0] . '<br>';
 
   // difference in years
   $year_diff = $trk_date[0] - date('Y');
@@ -77,7 +77,7 @@ for ($j = 0; $j < $num_rows; $j++){
   $year = $trk_date[0];
 
   // Get the number of days until the end of the "first" month 
-  $day_diff = date('t', mktime(0,0,0, $trk_date[1], 1, $trk_date[0]) - $trk_date[2]);
+  $day_diff = date('t', mktime(0, 0, 0, $trk_date[1], 1, $trk_date[0]) - $trk_date[2]);
 
   for($i=$trk_date[1]+1; $i<$month_diff+$trk_date[1]-1; $i++){
 
