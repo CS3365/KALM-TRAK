@@ -39,6 +39,7 @@ for ($j = 0; $j < num_rows; $j++){
   // Get the tracker ID you want to update here. Hardcoded for the prototype
   $tracker_row = mysql_fetch_row($result);
   $tracker_id = $tracker_row[0]; 
+  echo 'Traker ID: ' . $tracker_id . '<br>';
   // Get the last entry of a traker
   $query = "SELECT * FROM powerticks WHERE tid=" . tracker_id . " ORDER BY when DESC LIMIT 1";
   $result = mysql_query($query);
