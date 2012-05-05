@@ -115,7 +115,7 @@ for ($j = 0; $j < $num_rows; $j++){
     }
   // Get the number of days from the beginning of the current month until the current day    
     else {
-        $day_diff = date('d') - trk_date[2];
+        $day_diff = date('d') - 1;
     }
   echo 'day_diff: ' . $day_diff . '<br>';
 
