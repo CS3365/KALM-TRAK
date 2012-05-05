@@ -19,15 +19,24 @@ function login(){
 $db_server = login();
     
 //Clear db
+/*
 $query = "DELETE FROM powerticks";
 $result = mysql_query($query);
 // Print any errors from retrieving result
 if(!$result){
   die("Can't clear powerticks: " . mysql_error());
 }
+*/
+// Insert data into db
+    $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (1, '2012-05-01', 500)";
+    $result = mysql_query($query);
+    // Print any errors from retrieving result
+    if(!$result){
+        die("Can't retrieve traker IDs: " . mysql_error());
+    }
 
-// Current time
-$current_t = time();
+    // Current time
+//$current_t = time();
 
 // put the following in a loop for all trakers, only one traker in prototype {
 // ***********************************************************************
@@ -72,7 +81,12 @@ for ($j = 0; $j < $num_rows; $j++){
   echo 'Trk_time: ' . $trk_time[0] . ' ' . $trk_time[1] . ' ' . $trk_time[2] . ' ' . '<br>';
 
   // difference in years
-  $year_diff = $trk_date[0] - date('Y');
+    if($trk_date[1] >= date('m') && $trk_date[2] >= date('m') && $trk_time[0] > date('H') && $trk_time[1] > date('i')){  
+        $year_diff = $trk_date[0] - date('Y');
+    }
+    else{
+        $year_diff = $trk_date[0] - date('Y') - 1;
+    }
   echo 'year_diff: ' . $year_diff . '<br>';
 
   // difference of time in months 
@@ -80,7 +94,7 @@ for ($j = 0; $j < $num_rows; $j++){
     $month_diff = ($trk_date[1] - date('m')) + 12 * $year_diff;
   }
   else{
-    $month_diff = (12 - date('m') + $trk_date[1]) + 12 * ($year_diff-1);
+    $month_diff = (12 - date('m') + $trk_date[1]) + 12 * ($year_diff);
   }
   echo 'month_diff: ' . $month_diff . '<br>';
 
