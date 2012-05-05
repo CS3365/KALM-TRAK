@@ -41,18 +41,19 @@ if(!$result){
 // put the following in a loop for all trakers, only one traker in prototype {
 // ***********************************************************************
 
-$query = "SELECT `tid` FROM trakers";
-$result = mysql_query($query);
-// Print any errors from retrieving result
-  if(!$result){
-    die("Can't retrieve traker IDs: " . mysql_error());
-  }
+
     
 $num_rows = mysql_num_rows($result);
 echo 'Number of trakers: ' . $num_rows . '<br>';
     
 for ($j = 0; $j < $num_rows; $j++){
   // Get the tracker ID you want to update here. Hardcoded for the prototype
+    $query = "SELECT `tid` FROM trakers";
+    $result = mysql_query($query);
+    // Print any errors from retrieving result
+    if(!$result){
+        die("Can't retrieve traker IDs: " . mysql_error());
+    }
   $tracker_row = mysql_fetch_row($result);
   $tracker_id = $tracker_row[0]; 
   echo 'Traker ID: ' . $tracker_id . '<br>';
@@ -123,7 +124,7 @@ for ($j = 0; $j < $num_rows; $j++){
   $hour_diff = 23 - $trk_time[0] + date('G');
   // add to the number of hours of days inbetween the day of the last entry until the current day
     if($day_diff > 1){  
-  $hour_diff += 24 * ($day_diff -2);
+  $hour_diff += 24 * ($day_diff -1);
     }
     
   echo 'hour_diff: ' . $hour_diff . '<br>';
@@ -133,7 +134,7 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // Add to the number of minutes of all the hours between dates
     if($hour_diff > 1){
-  $min_diff += 60 * ($hour_diff -2 );
+  $min_diff += 60 * ($hour_diff -1 );
     }
     
     echo 'min_diff: ' . $min_diff . '<br>';
