@@ -115,14 +115,16 @@ for ($j = 0; $j < $num_rows; $j++){
     }
   // Get the number of days from the beginning of the current month until the current day    
     else {
-        $day_diff = date('d') - 1;
+        $day_diff = date('d') - $trk_date[2];
     }
   echo 'day_diff: ' . $day_diff . '<br>';
 
   // Get the number hours until midnight on the first day and the number of hours until the current time of today
   $hour_diff = 23 - $trk_time[0] + date('G');
   // add to the number of hours of days inbetween the day of the last entry until the current day
-  $hour_diff += 24 * ($day_diff -1);
+    if($day_diff > 1){  
+  $hour_diff += 24 * ($day_diff -2);
+    }
     
   echo 'hour_diff: ' . $hour_diff . '<br>';
 
@@ -130,7 +132,9 @@ for ($j = 0; $j < $num_rows; $j++){
   $min_diff = 59 - $trk_time[1] + date('i');
 
   // Add to the number of minutes of all the hours between dates
-  $min_diff += 60 * ($hour_diff -1 );
+    if($hour_diff > 1){
+  $min_diff += 60 * ($hour_diff -2 );
+    }
     
     echo 'min_diff: ' . $min_diff . '<br>';
   //-----------------------------------------------------------------
