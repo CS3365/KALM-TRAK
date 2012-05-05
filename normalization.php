@@ -18,6 +18,14 @@ function login(){
 // connect to the db
 $db_server = login();
     
+//Clear db
+$query = "DELETE * FROM pwerticks";
+$result = mysql_query($query);
+// Print any errors from retrieving result
+if(!$result){
+  die("Can't clear powerticks: " . mysql_error());
+}
+
 // Current time
 $current_t = time();
 
@@ -26,6 +34,10 @@ $current_t = time();
 
 $query = "SELECT `tid` FROM trakers";
 $result = mysql_query($query);
+// Print any errors from retrieving result
+  if(!$result){
+    die("Can't retrieve traker IDs: " . mysql_error());
+  }
     
 $num_rows = mysql_num_rows($result);
 echo 'Number of trakers: ' . $num_rows . '<br>';
@@ -61,6 +73,7 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // difference in years
   $year_diff = $trk_date[0] - date('Y');
+  echo 'year_diff: ' . $year_diff . '<br>';
 
   // difference of time in months 
   if($trk_date[1] >= date('m')){
@@ -69,10 +82,9 @@ for ($j = 0; $j < $num_rows; $j++){
   else{
     $month_diff = (12 - date('m') + $trk_date[1]) + 12 * ($year_diff-1);
   }
+  echo 'month_diff: ' . $month_diff . '<br>';
 
   // difference of time in days - number of days in a month is variable
-  $year = $trk_date[0];
-
   // Get the number of days until the end of the "first" month 
   $day_diff = date('t', mktime(0, 0, 0, $trk_date[1], 1, $trk_date[0])) - $trk_date[2];
 
@@ -88,11 +100,14 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // Get the number of days from the beginning of the current month until the current day    
   $day_diff += date('d');
+  echo 'day_diff: ' . $day_diff . '<br>';
 
   // Get the number hours until midnight on the first day and the number of hours until the current time of today
   $hour_diff = 23 - $trk_time[0] + date('G');
   // add to the number of hours of days inbetween the day of the last entry until the current day
   $hour_diff += 24 * ($day_diff -1);
+    
+  echo 'hour_diff: ' . $hour_diff . '<br>';
 
   // Get the number of minutes until the end of the first hour and the number of minutes into the current hour
   $min_diff = 59 - $trk_time[1] + date('i');
@@ -103,11 +118,12 @@ for ($j = 0; $j < $num_rows; $j++){
     echo 'min_diff: ' . $min_diff . '<br>';
   //-----------------------------------------------------------------
 
-  // add data for every minute
+  // Date and time of the last entry for traker
+  $year = $trk_date[0];
   $month = $trk_date[1];
-    $day = $trk_date[2];
-    $hours = $trk_time[0];
-    $minutes = $trk_time[1];
+  $day = $trk_date[2];
+  $hours = $trk_time[0];
+  $minutes = $trk_time[1];
     
   // Get the power level for the traker
   $level_query = "SELECT `avgPowerUsage` FROM trakers WHERE `tid`=" . $tracker_id;
