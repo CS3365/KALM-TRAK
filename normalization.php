@@ -134,12 +134,13 @@ for ($j = 0; $j < $num_rows; $j++){
 
     if($day_diff > 1){  
   // Get the number hours until midnight on the first day and the number of hours until the current time of today
-  $hour_diff = 23 - $trk_time[0] + date('G');
+  $hour_diff = 23 - $trk_time[0] + date('H');
+ echo "First last day hours: " . $hour_diff . '<br>';
   // add to the number of hours of days inbetween the day of the last entry until the current day
   $hour_diff += 23 * ($day_diff -1);
     }
     else {
-        $hour_diff = date('G') - $trk_time[0];
+        $hour_diff = date('H') - $trk_time[0];
     }
     
   echo 'hour_diff: ' . $hour_diff . '<br>';
