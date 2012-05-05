@@ -176,6 +176,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+              echo $traker_insert . '<br>';
             die("Can't insert data for traker turned on during a weekend day: " . mysql_error());
           }
         }
@@ -185,6 +186,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+            echo $traker_insert . '<br>';
             die("Can't insert data for traker turned off during a weekend day: " . mysql_error());
           }
         }
@@ -200,6 +202,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+              echo $traker_insert . '<br>';
             die("Can't insert data for traker turned on during a weekend night: " . mysql_error());
           }
         }
@@ -209,6 +212,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+              echo $traker_insert . '<br>';
             die("Can't insert data for traker turned off during a weekend night: " . mysql_error());
           }
         }
@@ -226,6 +230,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+              echo $traker_insert . '<br>';
             die("Can't insert data for traker turned on during a weekday day: " . mysql_error());
           }
         }
@@ -235,6 +240,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+              echo $traker_insert . '<br>';
             die("Can't insert data for traker turned off during a weekday day: " . mysql_error());
           }
         }
@@ -250,6 +256,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+              echo $traker_insert . '<br>';
             die("Can't insert data for traker turned on during a weekday night: " . mysql_error());
           }
         }
@@ -259,6 +266,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
+              echo $traker_insert . '<br>';
             die("Can't insert data for traker turned off during a weekday night: " . mysql_error());
           }
         }
