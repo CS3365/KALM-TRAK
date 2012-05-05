@@ -110,8 +110,9 @@ for ($j = 0; $j < $num_rows; $j++){
   $month = $trk_dt[1];
 
   // Get the power level for the traker
-  $level_query = "SELECT `avgPowerUsage` FROM trakers WHERE `tid`=1";
+  $level_query = "SELECT `avgPowerUsage` FROM trakers WHERE `tid`=" . $tracker_id;
   $power = mysql_query($level_query);
+  echo 'Power: ' . $power . '<br>';
   // Print any errors from retrieving result
   if(!$power){
     die("Can't retrieve average power level for traker: " . mysql_error());
@@ -201,7 +202,7 @@ for ($j = 0; $j < $num_rows; $j++){
         }
         // traker is off
         else{
-          $traker_insert = "INSERT INTO powerticks (`tid`, `when`, `level`) VALUES (".$tracker_id.", '" . $year . "-" . $month . "-" . $day . " " . $hours . ":" . $minutes . ":00', '0')";
+          $traker_insert = "INSERT INTO powerticks (`tid`, `when`, `level`) VALUES (" . $tracker_id . ", '" . $year . "-" . $month . "-" . $day . " " . $hours . ":" . $minutes . ":00', '0')";
           $result = mysql_query($traker_insert);
           // Print any errors from retrieving result
           if(!$result){
