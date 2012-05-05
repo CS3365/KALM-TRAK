@@ -19,20 +19,20 @@ function login(){
 $db_server = login();
     
 //Clear db
-/*
+
 $query = "DELETE FROM powerticks";
 $result = mysql_query($query);
 // Print any errors from retrieving result
 if(!$result){
   die("Can't clear powerticks: " . mysql_error());
 }
-*/
+
 // Insert data into db
     $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (1, '2012-05-01', 500)";
     $result = mysql_query($query);
     // Print any errors from retrieving result
     if(!$result){
-        die("Can't retrieve traker IDs: " . mysql_error());
+        die("Can't insert first sensor data: " . mysql_error());
     }
 
     // Current time
@@ -81,7 +81,7 @@ for ($j = 0; $j < $num_rows; $j++){
   echo 'Trk_time: ' . $trk_time[0] . ' ' . $trk_time[1] . ' ' . $trk_time[2] . ' ' . '<br>';
 
   // difference in years
-    if($trk_date[1] >= date('m') && $trk_date[2] >= date('m') && $trk_time[0] > date('H') && $trk_time[1] > date('i')){  
+    if( date('m') >= $trk_date[1] && date('m') >= $trk_date[2] && date('H') >= $trk_time[0] &&  date('i') >= $trk_time[1]){  
         $year_diff = $trk_date[0] - date('Y');
     }
     else{
