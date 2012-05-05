@@ -100,6 +100,7 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // difference of time in days - number of days in a month is variable
   // Get the number of days until the end of the "first" month 
+    if ($month_diff > 0){  
   $day_diff = date('t', mktime(0, 0, 0, $trk_date[1], 1, $trk_date[0])) - $trk_date[2];
 
   for($i=$trk_date[1]+1; $i<$month_diff+$trk_date[1]-1; $i++){
@@ -111,9 +112,11 @@ for ($j = 0; $j < $num_rows; $j++){
     }
     $day_diff += date('t', mktime(0,0,0, (($i-1) % 12)+1, 1, $year));
   }
-
+    }
   // Get the number of days from the beginning of the current month until the current day    
-  $day_diff += date('d');
+    else {
+  $day_diff += date('d') - trk_date[2];
+    }
   echo 'day_diff: ' . $day_diff . '<br>';
 
   // Get the number hours until midnight on the first day and the number of hours until the current time of today
