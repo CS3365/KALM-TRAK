@@ -122,7 +122,7 @@ for ($j = 0; $j < $num_rows; $j++){
 
   for($i = 1; $i <= $min_diff; $i++){
     // Reset minutes to zero if loop reaches the 60th minute
-    if (($minutes + $i) % 60 == 0){
+    if (($minutes + 1) % 60 == 0){
       $minutes = 0;
       // Reset hours to zero if loop reaches the 24th hour
       if(($hours + 1) % 24 == 0){
@@ -144,7 +144,7 @@ for ($j = 0; $j < $num_rows; $j++){
           $day += 1;
         }
       }
-      else{
+      else{ 
         $hours += 1;
       }
     }
