@@ -28,30 +28,13 @@ if(!$result){
 }
 
 // Insert data into db
-    $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (1, '2012-05-01', 500)";
+    $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (1, '2012-05-01', 500), (2, '2012-05-01', 500), (3, '2012-05-01', 500), (4, '2012-05-01', 500), (5, '2012-05-01', 500), (6, '2012-05-01', 500), (7, '2012-05-01', 500), (8, '2012-05-01', 500), (9, '2012-05-01', 500), (10, '2012-05-01', 500), (11, '2012-05-01', 500), (12, '2012-05-01', 500), (13, '2012-05-01', 500), (14, '2012-05-01', 500), (15, '2012-05-01', 500), (16, '2012-05-01', 500), (17, '2012-05-01', 500), (18, '2012-05-01', 500), (19, '2012-05-01', 500), (20, '2012-05-01', 500), (21, '2012-05-01', 500), (22, '2012-05-01', 500)";
     $result = mysql_query($query);
     // Print any errors from retrieving result
     if(!$result){
         die("Can't insert first sensor data: " . mysql_error());
     }
-    $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (2, '2012-05-01', 500)";
-    $result = mysql_query($query);
-    // Print any errors from retrieving result
-    if(!$result){
-        die("Can't insert first sensor data: " . mysql_error());
-    }
-    $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (3, '2012-05-01', 500)";
-    $result = mysql_query($query);
-    // Print any errors from retrieving result
-    if(!$result){
-        die("Can't insert first sensor data: " . mysql_error());
-    }
-    $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (4, '2012-05-01', 500)";
-    $result = mysql_query($query);
-    // Print any errors from retrieving result
-    if(!$result){
-        die("Can't insert first sensor data: " . mysql_error());
-    }
+
 
     // Current time
 //$current_t = time();
@@ -137,7 +120,7 @@ for ($j = 0; $j < $num_rows; $j++){
   $hour_diff = 23 - $trk_time[0] + date('H') - 11;
  echo 'First last day hours: ' . $hour_diff . '<br>';
   // add to the number of hours of days inbetween the day of the last entry until the current day
-  $hour_diff += 23 * ($day_diff -1);
+  $hour_diff += 24 * ($day_diff -1);
     }
     else {
         $hour_diff = date('H') - $trk_time[0];
