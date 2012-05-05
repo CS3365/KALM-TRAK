@@ -122,16 +122,16 @@ for ($j = 0; $j < $num_rows; $j++){
 
   for($i = 1; $i <= $min_diff; $i++){
     // Reset minutes to zero if loop reaches the 60th minute
-    if (($trk_time[1] + $i) % 60 == 0){
+    if (($minutes + $i) % 60 == 0){
       $minutes = 0;
       // Reset hours to zero if loop reaches the 24th hour
-      if(($trk_time[0] + 1) % 24 == 0){
+      if(($hours + 1) % 24 == 0){
         $hours = 0;
         // Reset the day to 1 if it surpasses the last day of the month
-        if(($trk_date[2] + 1) % (date('t', mktime(0,0,0,$month, 1, $year)) + 1 == 0)){
+        if(($day + 1) % (date('t', mktime(0,0,0,$month, 1, $year)) + 1 == 0)){
           $day = 1;
           // Reset the month to 1 if it surpasses the last month of the year
-          if(($trk_date[1] + 1) % 13 == 0){
+          if(($month] + 1) % 13 == 0){
             $month = 1;
             // Starting the months over means a new year has started as well
             $year += 1;
@@ -141,15 +141,15 @@ for ($j = 0; $j < $num_rows; $j++){
           }
         }
         else{
-          $day = $trk_date[2] + 1;
+          $day += 1;
         }
       }
       else{
-        $hours = $trk_time[0] + 1;
+        $hours += 1;
       }
     }
     else{
-      $minutes = $trk_time[1] + 1;
+      $minutes += 1;
     }
     echo 'time to insert: ' . $year . '-' . $month . '-' . $day . ' ' . $hours . ':' . $minutes . '<br>';
     // The date and time for the entry to be entered has now been established. 
