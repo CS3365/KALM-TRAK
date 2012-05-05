@@ -27,13 +27,7 @@ if(!$result){
   die("Can't clear powerticks: " . mysql_error());
 }
 
-// Insert data into db
-    $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (1, '2012-05-01', 500)";
-    $result = mysql_query($query);
-    // Print any errors from retrieving result
-    if(!$result){
-        die("Can't insert first sensor data: " . mysql_error());
-    }
+
 
     // Current time
 //$current_t = time();
@@ -44,6 +38,19 @@ $query = "SELECT `tid` FROM trakers";
 $result_trakers = mysql_query($query);
 $num_rows = mysql_num_rows($result_trakers);
 echo 'Number of trakers: ' . $num_rows . '<br>';
+    
+    for($j = 0; $j < $num_rows; $j++){
+        
+        $tracker_row = mysql_fetch_row($result_trakers);
+        $tracker_id = $tracker_row[0]; 
+        // Insert data into db
+        $query = "INSERT INTO `powerticks` (`tid`,`when`,`level`) VALUES (" . $tracker_id . ", '2012-05-01', 500)";
+        $result = mysql_query($query);
+        // Print any errors from retrieving result
+        if(!$result){
+            die("Can't insert first sensor data: " . mysql_error());
+        }
+    }
     
 for ($j = 0; $j < $num_rows; $j++){
   // Get the tracker ID you want to update here. Hardcoded for the prototype
@@ -114,21 +121,27 @@ for ($j = 0; $j < $num_rows; $j++){
     }
   echo 'day_diff: ' . $day_diff . '<br>';
 
+    if($day_diff > 1){  
   // Get the number hours until midnight on the first day and the number of hours until the current time of today
   $hour_diff = 23 - $trk_time[0] + date('G');
   // add to the number of hours of days inbetween the day of the last entry until the current day
-    if($day_diff > 1){  
-  $hour_diff += 24 * ($day_diff -1);
+  $hour_diff += 23 * ($day_diff -1);
+    }
+    else {
+        $hour_diff = date('G') - $trk_time[0];
     }
     
   echo 'hour_diff: ' . $hour_diff . '<br>';
 
   // Get the number of minutes until the end of the first hour and the number of minutes into the current hour
-  $min_diff = 59 - $trk_time[1] + date('i');
-
-  // Add to the number of minutes of all the hours between dates
     if($hour_diff > 1){
-  $min_diff += 60 * ($hour_diff -1 );
+        $min_diff = 59 - $trk_time[1] + date('i');
+
+        // Add to the number of minutes of all the hours between dates
+        $min_diff += 60 * ($hour_diff -1 );
+    }
+    else{
+        $min_diff = date('i') - $trk_time[1];
     }
     
     echo 'min_diff: ' . $min_diff . '<br>';
