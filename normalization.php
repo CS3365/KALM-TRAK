@@ -111,7 +111,9 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // Get the power level for the traker
   $level_query = "SELECT `avgPowerUsage` FROM trakers WHERE `tid`=" . $tracker_id;
-  $power = mysql_query($level_query);
+  $power_result = mysql_query($level_query);
+    $power_row = mysql_fetch_row($power_result);
+    $power = $power_row[0];
   echo 'Power: ' . $power . '<br>';
   // Print any errors from retrieving result
   if(!$power){
