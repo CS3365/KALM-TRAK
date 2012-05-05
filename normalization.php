@@ -128,10 +128,10 @@ for ($j = 0; $j < $num_rows; $j++){
       if(($hours + 1) % 24 == 0){
         $hours = 0;
         // Reset the day to 1 if it surpasses the last day of the month
-        if(($day + 1) % (date('t', mktime(0,0,0,$month, 1, $year)) + 1 == 0)){
+        if(($day + 1) % (date('t', mktime(0,0,0, $month, 1, $year)) + 1 == 0)){
           $day = 1;
           // Reset the month to 1 if it surpasses the last month of the year
-          if(($month] + 1) % 13 == 0){
+          if(($month + 1) % 13 == 0){
             $month = 1;
             // Starting the months over means a new year has started as well
             $year += 1;
