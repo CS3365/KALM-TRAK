@@ -105,7 +105,10 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // add data for every minute
   $month = $trk_date[1];
-
+    $day = $trk_date[2];
+    $hours = $trk_time[0];
+    $minutes = $trk_time[1];
+    
   // Get the power level for the traker
   $level_query = "SELECT `avgPowerUsage` FROM trakers WHERE `tid`=" . $tracker_id;
   $power_result = mysql_query($level_query);
