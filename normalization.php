@@ -74,7 +74,7 @@ for ($j = 0; $j < $num_rows; $j++){
   $year = $trk_date[0];
 
   // Get the number of days until the end of the "first" month 
-  $day_diff = date('t', mktime(0, 0, 0, $trk_date[1], 1, $trk_date[0]) - $trk_date[2]);
+  $day_diff = date('t', mktime(0, 0, 0, $trk_date[1], 1, $trk_date[0])) - $trk_date[2];
 
   for($i=$trk_date[1]+1; $i<$month_diff+$trk_date[1]-1; $i++){
 
@@ -138,7 +138,7 @@ for ($j = 0; $j < $num_rows; $j++){
           }
         }
         else{
-          $day = $trk_date[2] +1;
+          $day = $trk_date[2] + 1;
         }
       }
       else{
@@ -146,7 +146,7 @@ for ($j = 0; $j < $num_rows; $j++){
       }
     }
     else{
-      $minutes = $trk_time[1] + $i;
+      $minutes = $trk_time[1] + 1;
     }
     echo 'time to insert: ' . $year . '-' . $month . '-' . $day . ' ' . $hours . ':' . $minutes . '<br>';
     // The date and time for the entry to be entered has now been established. 
