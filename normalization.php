@@ -125,7 +125,7 @@ for ($j = 0; $j < $num_rows; $j++){
       if(($trk_time[0] + 1) % 24 == 0){
         $hours = 0;
         // Reset the day to 1 if it surpasses the last day of the month
-        if(($trk_date[2] + 1) % (date('t', mktime(0,0,0,$month, 1, $year)) + 1)){
+        if(($trk_date[2] + 1) % (date('t', mktime(0,0,0,$month, 1, $year)) + 1 == 0)){
           $day = 1;
           // Reset the month to 1 if it surpasses the last month of the year
           if(($trk_date[1] + 1) % 13 == 0){
