@@ -40,21 +40,15 @@ if(!$result){
 
 // put the following in a loop for all trakers, only one traker in prototype {
 // ***********************************************************************
-
-
-    
-$num_rows = mysql_num_rows($result);
+$query = "SELECT `tid` FROM trakers";
+$result_trakers = mysql_query($query);
+$num_rows = mysql_num_rows($result_trakers);
 echo 'Number of trakers: ' . $num_rows . '<br>';
     
 for ($j = 0; $j < $num_rows; $j++){
   // Get the tracker ID you want to update here. Hardcoded for the prototype
-    $query = "SELECT `tid` FROM trakers";
-    $result = mysql_query($query);
-    // Print any errors from retrieving result
-    if(!$result){
-        die("Can't retrieve traker IDs: " . mysql_error());
-    }
-  $tracker_row = mysql_fetch_row($result);
+
+  $tracker_row = mysql_fetch_row($result_trakers);
   $tracker_id = $tracker_row[0]; 
   echo 'Traker ID: ' . $tracker_id . '<br>';
   // Get the last entry of a traker
