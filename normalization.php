@@ -17,23 +17,18 @@ function login(){
 
 // connect to the db
 $db_server = login();
-
-    
-echo 'hello world <br>';
     
 // Current time
 $current_t = time();
-echo $current_t . '<br>';
 
 // put the following in a loop for all trakers, only one traker in prototype {
 // ***********************************************************************
 
 $query = "SELECT `tid` FROM trakers";
 $result = mysql_query($query);
-echo $result . '<br>';
     
 $num_rows = mysql_num_rows($result);
-echo $num_rows . '<br>';
+echo 'Number of trakers: ' . $num_rows . '<br>';
     
 for ($j = 0; $j < $num_rows; $j++){
   // Get the tracker ID you want to update here. Hardcoded for the prototype
@@ -104,6 +99,8 @@ for ($j = 0; $j < $num_rows; $j++){
 
   // Add to the number of minutes of all the hours between dates
   $min_diff += 60 * ($hour_diff -1 );
+    
+    echo 'min_diff: ' . $min_diff . '<br>';
   //-----------------------------------------------------------------
 
   // add data for every minute
@@ -112,8 +109,8 @@ for ($j = 0; $j < $num_rows; $j++){
   // Get the power level for the traker
   $level_query = "SELECT `avgPowerUsage` FROM trakers WHERE `tid`=" . $tracker_id;
   $power_result = mysql_query($level_query);
-    $power_row = mysql_fetch_row($power_result);
-    $power = $power_row[0];
+  $power_row = mysql_fetch_row($power_result);
+  $power = $power_row[0];
   echo 'Power: ' . $power . '<br>';
   // Print any errors from retrieving result
   if(!$power){
