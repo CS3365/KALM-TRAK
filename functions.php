@@ -12,7 +12,7 @@ function isValidLogin($user, $pass) {
 }
 //}}}1
 //{{{1 get functions
-function getAreas($user) {
+function getAreas() {
   return getAssoc(
     "SELECT * ".
     "FROM areas");
@@ -23,8 +23,32 @@ function getTrakersInArea($areaid) {
     "FROM trakers JOIN areas ".
     "WHERE aid=$areaid");
 }
+function getTrakersTree() {
+  $areas = getAssoc(
+    "SELECT name AS text, aid AS id ".
+    "FROM areas");
+  for($i=0; $i<$areas.length; $i++) {
+    $areas[$i]["items"] = getAssoc(
+      "SELECT name AS text, tid AS id, 'true' AS leaf ".
+      "FROM trakers ".
+      "WHERE tid = ".$areas[$i]["id"]);
+  }
+  return $areas;
+}
 //}}}1
 //{{{1 set functions
+//}}}1
+//{{{1 graphing functions
+function plotTraker($trakerid) {
+  $trakerid = 1;
+  return getAssoc(
+    "SELECT sum(level)/60, name, HOUR(Powerticks.when) AS hour,".
+      "DATE_FORMAT(powerticks.when, '%Y/%m/%d') AS day".
+    "FROM powerticks JOIN trakers USING(tid)".
+    "WHERE tid = 1".
+    "GROUP BY day, hour".
+    "ORDER BY day, hour");
+}
 //}}}1
 //{{{1 mysql funtions
 function query($q) {

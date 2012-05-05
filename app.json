@@ -20,6 +20,7 @@
   "js": [
     {
       "path": "sdk/sencha-touch-all-debug.js"
+      "path": "sdk/touch-charts.js"
     },
     {
       "path": "app.js",

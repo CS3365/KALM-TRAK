@@ -4,6 +4,8 @@ define('db_database', 'kt');
 define('db_username', 'kt');
 define('db_password', 'kt');
 
+date_default_timezone_set('America/Chicago');
+
 function login(){
   $db_server = mysql_connect(db_hostname, db_username, db_password);
   if (!$db_server) {

@@ -2,6 +2,8 @@
 
 include 'functions.php';
 
+echo json_encode(getTrakersTree());
+
 if(isset($_POST['action'])) {
   $action = $_POST['action'];
   switch($action) {
@@ -20,7 +22,7 @@ if(isset($_POST['action'])) {
     //{{{1 get functions
     //{{{2 getAreas
   case 'getAreas':
-    $result = getAreas($_POST['user']);
+    $result = getAreas();
     echo json_encode($result);
     break;
     //}}}2
@@ -31,6 +33,12 @@ if(isset($_POST['action'])) {
     break;
     //}}}2
     //}}}1 end get functions
+    //{{{1 graphing functions
+  case 'plotTraker':
+    echo json_encode(
+      plotTraker($_POST['trakerid']));
+    break;
+    //}}}1
   }
 }
 
