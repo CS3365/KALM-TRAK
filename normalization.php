@@ -148,7 +148,7 @@ for ($j = 0; $j < $num_rows; $j++){
     else{
       $minutes = $trk_time[1] + $i;
     }
-      echo 'time to insert: ' . $year . '-' . $month . '-' . $day . ' ' . $hours . ':' . $minutes;
+    echo 'time to insert: ' . $year . '-' . $month . '-' . $day . ' ' . $hours . ':' . $minutes;
     // The date and time for the entry to be entered has now been established. 
     // Implement a normalization algorithm to deduce whether or not the given traker
     //  should be registered as on or off
