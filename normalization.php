@@ -125,10 +125,10 @@ for ($j = 0; $j < $num_rows; $j++){
       if(($trk_time[0] + 1) % 24 == 0){
         $hours = 0;
         // Reset the day to 1 if it surpasses the last day of the month
-        if(($trk_dt[2] + 1) % (date('t', mktime(0,0,0,$month, 1, $year)) + 1)){
+        if(($trk_date[2] + 1) % (date('t', mktime(0,0,0,$month, 1, $year)) + 1)){
           $day = 1;
           // Reset the month to 1 if it surpasses the last month of the year
-          if(($trk_dt[1] + 1) % 13 == 0){
+          if(($trk_date[1] + 1) % 13 == 0){
             $month = 1;
             // Starting the months over means a new year has started as well
             $year += 1;
@@ -138,7 +138,7 @@ for ($j = 0; $j < $num_rows; $j++){
           }
         }
         else{
-          $day = $trk_dt[1] +1;
+          $day = $trk_date[2] +1;
         }
       }
       else{
@@ -148,6 +148,7 @@ for ($j = 0; $j < $num_rows; $j++){
     else{
       $minutes = $trk_time[1] + $i;
     }
+      echo 'time to insert: ' . $year . '-' . $month . '-' . $day . ' ' . $hours . ':' . $minutes;
     // The date and time for the entry to be entered has now been established. 
     // Implement a normalization algorithm to deduce whether or not the given traker
     //  should be registered as on or off
