@@ -19,7 +19,7 @@ function login(){
 $db_server = login();
     
 //Clear db
-$query = "DELETE * FROM `powerticks`";
+$query = "DELETE FROM powerticks";
 $result = mysql_query($query);
 // Print any errors from retrieving result
 if(!$result){
