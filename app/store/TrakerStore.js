@@ -1,7 +1,7 @@
 Ext.define('KALMTRAK.store.TrakerStore', {
   extend: 'Ext.data.TreeStore',
   requires: [
-    'KALMTRAK.model.Traker'
+    'KALMTRAK.model.TrakerLocation'
   ],
   config: {
     model: 'KALMTRAK.model.Traker',
