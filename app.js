@@ -13,9 +13,9 @@ Ext.application({
 
     views: ['Main'],//, 'Scheduler'],
 
-    stores: ['TrakerStore'],
+    stores: ['TrakerStore', 'TrakerPower'],
 
-    models: ['Traker'],
+    models: ['Traker', 'Power'],
 
     icon: {
         57: 'resources/icons/Icon.png',

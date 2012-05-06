@@ -20,7 +20,9 @@
   "js": [
     {
       "path": "sdk/sencha-touch-all-debug.js"
-      "path": "sdk/touch-charts.js"
+    },
+    {
+      "path": "sdk/touch-charts-debug.js"
     },
     {
       "path": "app.js",
@@ -44,6 +46,9 @@
   "css": [
     {
       "path": "resources/css/app.css",
+      "update": "delta"
+    }, {
+      "path": "resources/css/sencha-touch.css",
       "update": "delta"
     }
   ],
