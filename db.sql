@@ -87,3 +87,6 @@ INSERT INTO `kt`.`trakers`
   (20,7,'Lamp 14',500,2,.5,2),
   (21,7,'Lamp 14',500,2,.5,2),
   (22,7,'Television 5',500,2,.5,2);
+
+INSERT INTO `kt`.`powerticks` (`tid`,`when`,`level`) VALUES
+  (1, '2012-05-01', 500);
