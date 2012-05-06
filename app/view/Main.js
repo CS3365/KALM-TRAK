@@ -5,8 +5,9 @@ Ext.define("KALMTRAK.view.Main", {
     'Ext.TitleBar',
     'KALMTRAK.view.Scheduler',
     'KALMTRAK.view.TrakerSelector',
-	'KALMTRAK.view.SmartTrakerDescriptor',
-	'KALMTRAK.view.BrilliantTrakerDescriptor'
+    'KALMTRAK.view.SmartTrakerDescriptor',
+    'KALMTRAK.view.BrilliantTrakerDescriptor',
+    'KALMTRAK.view.Graphs'
   ],
 
   config: {
@@ -19,11 +20,11 @@ Ext.define("KALMTRAK.view.Main", {
         iconCls: 'star',
         xtype: 'formpanel',
         items: [
-		  {
-			html: [
-					'<center><img height=340 src="http://acmttu.org/wp-content/uploads/2012/05/Kalmtrak-new.png" style="margin-top:10%"/></center>',
-			].join("")
-		  },
+          {
+            html: [
+              '<center><img height=340 src="http://acmttu.org/wp-content/uploads/2012/05/Kalmtrak-new.png" style="margin-top:10%"/></center>',
+              ].join("")
+          },
           {
             xtype: 'fieldset',
             title: 'KALMTRAK Login',
@@ -67,23 +68,29 @@ Ext.define("KALMTRAK.view.Main", {
         layout: 'fit',
         items: {xtype:'ktscheduler'}
       },
-	  {
+      {
         title: 'Controller',
         iconCls: 'settings',
         layout: 'fit',
         items: {xtype:'ktselector'}
       },
-	  {
+      {
         title: '&nbsp;Smart TRAKer Details&nbsp;',
         iconCls: 'compose',
         layout: 'fit',
         items: {xtype:'ktsmartdescriptor'}
       },
-	  {
+      {
         title: '&nbsp;Brilliant TRAKer Details&nbsp;',
         iconCls: 'compose',
         layout: 'fit',
         items: {xtype:'ktbrilliantdescriptor'}
+      }
+      , {
+        title: 'Usage',
+        iconCls: 'chart2',
+        layout: 'fit',
+        items: {xtype:'ktgraphs'}
       }
     ]
   }

@@ -2,10 +2,10 @@
 
 include 'functions.php';
 
-echo json_encode(getTrakersTree());
+//echo json_encode(getTrakersTree());
 
-if(isset($_POST['action'])) {
-  $action = $_POST['action'];
+if(isset($_GET['action'])) {
+  $action = $_GET['action'];
   switch($action) {
     //{{{ login
   case 'login':
@@ -35,8 +35,8 @@ if(isset($_POST['action'])) {
     //}}}1 end get functions
     //{{{1 graphing functions
   case 'plotTraker':
-    echo json_encode(
-      plotTraker($_POST['trakerid']));
+    $ret['data'] = plotTraker();//$_GET['trakerid']));
+    echo json_encode($ret);
     break;
     //}}}1
   }
