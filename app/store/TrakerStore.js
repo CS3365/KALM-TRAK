@@ -4,7 +4,7 @@ Ext.define('KALMTRAK.store.TrakerStore', {
     'KALMTRAK.model.TrakerLocation'
   ],
   config: {
-    model: 'KALMTRAK.model.Traker',
+    model: 'KALMTRAK.model.TrakerLocation',
     defaultRootProperty: 'items',
     root: {
       text: 'KALMTRAK Trakers',
