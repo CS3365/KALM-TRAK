@@ -5,9 +5,7 @@ Ext.define("KALMTRAK.view.Main", {
     'Ext.TitleBar',
     'KALMTRAK.view.Scheduler',
     'KALMTRAK.view.TrakerSelector',
-    'KALMTRAK.view.SmartTrakerDescriptor',
-    'KALMTRAK.view.BrilliantTrakerDescriptor',
-    'KALMTRAK.view.Graphs'
+    'KALMTRAK.view.BrilliantTrakerDescriptor'
   ],
 
   config: {
@@ -38,25 +36,13 @@ Ext.define("KALMTRAK.view.Main", {
         iconCls: 'settings',
         layout: 'fit',
         items: {xtype:'ktselector'}
-      },/*
-      {
-        title: '&nbsp;Smart TRAKer Details&nbsp;',
-        iconCls: 'compose',
-        layout: 'fit',
-        items: {xtype:'ktsmartdescriptor'}
-      },*/
+      },
       {
         title: '&nbsp;Brilliant TRAKer Details&nbsp;',
         iconCls: 'compose',
         layout: 'fit',
         items: {xtype:'ktbrilliantdescriptor'}
-      }/*
-      , {
-        title: 'Usage',
-        iconCls: 'chart2',
-        layout: 'fit',
-        items: {xtype:'ktgraphs'}
-      }*/
+      }
     ]
   }
 });
