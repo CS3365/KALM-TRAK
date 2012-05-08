@@ -22,7 +22,7 @@ Ext.define("KALMTRAK.view.Main", {
         items: [
           {
             html: [
-              '<center><img height=340 src="http://acmttu.org/wp-content/uploads/2012/05/Kalmtrak-new.png" style="margin-top:10%"/></center>',
+              '<center><img height=340 src="http://acmttu.org/wp-content/uploads/2012/05/Kalmtrak-new.png" style="margin-top:20%"/></center>',
               ].join("")
           }
         ]
@@ -38,25 +38,25 @@ Ext.define("KALMTRAK.view.Main", {
         iconCls: 'settings',
         layout: 'fit',
         items: {xtype:'ktselector'}
-      },
+      },/*
       {
         title: '&nbsp;Smart TRAKer Details&nbsp;',
         iconCls: 'compose',
         layout: 'fit',
         items: {xtype:'ktsmartdescriptor'}
-      },
+      },*/
       {
         title: '&nbsp;Brilliant TRAKer Details&nbsp;',
         iconCls: 'compose',
         layout: 'fit',
         items: {xtype:'ktbrilliantdescriptor'}
-      }
+      }/*
       , {
         title: 'Usage',
         iconCls: 'chart2',
         layout: 'fit',
         items: {xtype:'ktgraphs'}
-      }
+      }*/
     ]
   }
 });
